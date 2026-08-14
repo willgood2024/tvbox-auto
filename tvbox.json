@@ -1,14 +1,62 @@
 [
-  { "name": "饭太硬", "url": "http://饭太硬.top/tv", "type": 0 },
-  { "name": "肥猫", "url": "http://肥猫.love", "type": 0 },
-  { "name": "巧技", "url": "http://cdn.qiaoji8.com/tvbox.json", "type": 0 },
-  { "name": "运输车", "url": "https://weixine.net/ysc.json", "type": 0 },
-  { "name": "吾爱有三", "url": "http://52bsj.vip:98/wuai", "type": 0 },
-  { "name": "欧歌多仓", "url": "http://tv.nxog.top/api.php?mz=xb&id=1&b=欧歌", "type": 0 },
-  { "name": "多多聚合多仓", "url": "https://gitlab.com/duomv/apps/-/raw/main/fast.json", "type": 0 },
-  { "name": "星辰", "url": "https://fmbox.cc/", "type": 0 },
-  { "name": "小米", "url": "https://www.mpanso.com/小米/DEMO.json", "type": 0 },
-  { "name": "道长", "url": "https://pastebin.com/raw/5NHaxyGR", "type": 0 },
-  { "name": "国内直播IPTV", "url": "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/IPTV.m3u", "type": 1 },
-  { "name": "国际直播", "url": "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Global.m3u", "type": 1 }
+  {
+    "name": "饭太硬",
+    "url": "http://饭太硬.top/tv",
+    "type": 0
+  },
+  {
+    "name": "肥猫",
+    "url": "http://肥猫.love",
+    "type": 0
+  },
+  {
+    "name": "巧技",
+    "url": "http://cdn.qiaoji8.com/tvbox.json",
+    "type": 0
+  },
+  {
+    "name": "运输车",
+    "url": "https://weixine.net/ysc.json",
+    "type": 0
+  },
+  {
+    "name": "吾爱有三",
+    "url": "http://52bsj.vip:98/wuai",
+    "type": 0
+  },
+  {
+    "name": "欧歌多仓",
+    "url": "http://tv.nxog.top/api.php?mz=xb&id=1&b=欧歌",
+    "type": 0
+  },
+  {
+    "name": "多多聚合多仓",
+    "url": "https://gitlab.com/duomv/apps/-/raw/main/fast.json",
+    "type": 0
+  },
+  {
+    "name": "星辰",
+    "url": "https://fmbox.cc/",
+    "type": 0
+  },
+  {
+    "name": "小米",
+    "url": "https://www.mpanso.com/小米/DEMO.json",
+    "type": 0
+  },
+  {
+    "name": "道长",
+    "url": "https://pastebin.com/raw/5NHaxyGR",
+    "type": 0
+  },
+  {
+    "name": "国内直播IPTV",
+    "url": "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/IPTV.m3u",
+    "type": 1
+  },
+  {
+    "name": "国际直播",
+    "url": "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Global.m3u",
+    "type": 1
+  }
 ]

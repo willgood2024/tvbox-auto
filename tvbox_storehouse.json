@@ -1,14 +1,44 @@
 {
   "storeHouse": [
-    { "sourceName": "饭太硬", "sourceUrl": "http://饭太硬.top/tv" },
-    { "sourceName": "肥猫", "sourceUrl": "http://肥猫.love" },
-    { "sourceName": "巧技", "sourceUrl": "http://cdn.qiaoji8.com/tvbox.json" },
-    { "sourceName": "运输车", "sourceUrl": "https://weixine.net/ysc.json" },
-    { "sourceName": "吾爱有三", "sourceUrl": "http://52bsj.vip:98/wuai" },
-    { "sourceName": "欧歌多仓", "sourceUrl": "http://tv.nxog.top/api.php?mz=xb&id=1&b=欧歌" },
-    { "sourceName": "多多聚合多仓", "sourceUrl": "https://gitlab.com/duomv/apps/-/raw/main/fast.json" },
-    { "sourceName": "星辰", "sourceUrl": "https://fmbox.cc/" },
-    { "sourceName": "小米", "sourceUrl": "https://www.mpanso.com/小米/DEMO.json" },
-    { "sourceName": "道长", "sourceUrl": "https://pastebin.com/raw/5NHaxyGR" }
+    {
+      "sourceName": "饭太硬",
+      "sourceUrl": "http://饭太硬.top/tv"
+    },
+    {
+      "sourceName": "肥猫",
+      "sourceUrl": "http://肥猫.love"
+    },
+    {
+      "sourceName": "巧技",
+      "sourceUrl": "http://cdn.qiaoji8.com/tvbox.json"
+    },
+    {
+      "sourceName": "运输车",
+      "sourceUrl": "https://weixine.net/ysc.json"
+    },
+    {
+      "sourceName": "吾爱有三",
+      "sourceUrl": "http://52bsj.vip:98/wuai"
+    },
+    {
+      "sourceName": "欧歌多仓",
+      "sourceUrl": "http://tv.nxog.top/api.php?mz=xb&id=1&b=欧歌"
+    },
+    {
+      "sourceName": "多多聚合多仓",
+      "sourceUrl": "https://gitlab.com/duomv/apps/-/raw/main/fast.json"
+    },
+    {
+      "sourceName": "星辰",
+      "sourceUrl": "https://fmbox.cc/"
+    },
+    {
+      "sourceName": "小米",
+      "sourceUrl": "https://www.mpanso.com/小米/DEMO.json"
+    },
+    {
+      "sourceName": "道长",
+      "sourceUrl": "https://pastebin.com/raw/5NHaxyGR"
+    }
   ]
 }
