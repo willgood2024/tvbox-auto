@@ -1,17 +1,77 @@
 [
-  { "name": "饭太硬", "url": "http://饭太硬.top/tv", "type": 0 },
-  { "name": "肥猫", "url": "http://肥猫.live", "type": 0 },
-  { "name": "巧技", "url": "http://cdn.qiaoji8.com/tvbox.json", "type": 0 },
-  { "name": "俊哥", "url": "http://home.jundie.top:81/top98.json", "type": 0 },
-  { "name": "巧儿", "url": "https://pandown.pro/tvbox/tvbox.json", "type": 0 },
-  { "name": "OK猫", "url": "http://ok321.top/tv", "type": 0 },
-  { "name": "猎手", "url": "https://raw.liucn.cc/box/m.json", "type": 0 },
-  { "name": "王二小", "url": "https://9280.kstore.vip/newwex.json", "type": 0 },
-  { "name": "潇洒", "url": "https://9877.kstore.space/AnotherD/api.json", "type": 0 },
-  { "name": "天天秒播", "url": "http://tv.laohu.cool/tvbox.json", "type": 0 },
-  { "name": "荷城茶秀", "url": "http://rihou.cc:88/荷城茶秀", "type": 0 },
-  { "name": "纯一骚零", "url": "https://100km.top/0", "type": 0 },
-  { "name": "吾爱线路", "url": "https://freed.yuanhsing.cf/tvbox/meowcf.json", "type": 0 },
-  { "name": "国内直播IPTV", "url": "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/IPTV.m3u", "type": 1 },
-  { "name": "国际直播", "url": "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Global.m3u", "type": 1 }
+  {
+    "name": "饭太硬",
+    "url": "http://饭太硬.top/tv",
+    "type": 0
+  },
+  {
+    "name": "肥猫",
+    "url": "http://肥猫.live",
+    "type": 0
+  },
+  {
+    "name": "巧技",
+    "url": "http://cdn.qiaoji8.com/tvbox.json",
+    "type": 0
+  },
+  {
+    "name": "俊哥",
+    "url": "http://home.jundie.top:81/top98.json",
+    "type": 0
+  },
+  {
+    "name": "巧儿",
+    "url": "https://pandown.pro/tvbox/tvbox.json",
+    "type": 0
+  },
+  {
+    "name": "OK猫",
+    "url": "http://ok321.top/tv",
+    "type": 0
+  },
+  {
+    "name": "猎手",
+    "url": "https://raw.liucn.cc/box/m.json",
+    "type": 0
+  },
+  {
+    "name": "王二小",
+    "url": "https://9280.kstore.vip/newwex.json",
+    "type": 0
+  },
+  {
+    "name": "潇洒",
+    "url": "https://9877.kstore.space/AnotherD/api.json",
+    "type": 0
+  },
+  {
+    "name": "天天秒播",
+    "url": "http://tv.laohu.cool/tvbox.json",
+    "type": 0
+  },
+  {
+    "name": "荷城茶秀",
+    "url": "http://rihou.cc:88/荷城茶秀",
+    "type": 0
+  },
+  {
+    "name": "纯一骚零",
+    "url": "https://100km.top/0",
+    "type": 0
+  },
+  {
+    "name": "吾爱线路",
+    "url": "https://freed.yuanhsing.cf/tvbox/meowcf.json",
+    "type": 0
+  },
+  {
+    "name": "国内直播IPTV",
+    "url": "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/IPTV.m3u",
+    "type": 1
+  },
+  {
+    "name": "国际直播",
+    "url": "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Global.m3u",
+    "type": 1
+  }
 ]
