@@ -1,110 +1,58 @@
 #!/usr/bin/env python3
-# TVBox 自动采集器：从种子接口抓取并校验，生成多仓 JSON（影视仓 storeHouse 格式）
+# TVBox / 影视仓 自动发布器（无需第三方依赖，仅用标准库）
+#
+# 设计要点（重要）：
+#   GitHub 的运行器（美国/欧洲节点）无法连通国内影视源（http / 中文域名基本不可达），
+#   所以在 GitHub 上做"连通性校验 + 提取子地址"必然得到又薄又死的清单（正是之前 404 的根因）。
+#   正确做法：直接发布一份精选的「聚合多仓订阅 URL 清单」。
+#   每个 URL 自身就是一个第三方维护的多仓 JSON，由维护者自己每天更新——
+#   GitHub Action 只需每天重新发布这份稳定清单即可，影视仓加载后会展开每条聚合源得到几十条线路。
+#   某个聚合源临时抽风，只那一条空，不影响其它；长期失效则改一次 SOURCES 即可。
+
 import json
 import os
-import asyncio
-import aiohttp
 
-SEEDS = [
-    "http://饭太硬.top/tv",
-    "http://肥猫.love",
-    "http://cdn.qiaoji8.com/tvbox.json",
-    "https://weixine.net/ysc.json",
-    "http://52bsj.vip:98/wuai",
-    "http://tv.nxog.top/api.php?mz=xb&id=1&b=欧歌",
-    "https://gitlab.com/duomv/apps/-/raw/main/fast.json",
-    "https://fmbox.cc/",
-    "https://www.mpanso.com/小米/DEMO.json",
-    "https://pastebin.com/raw/5NHaxyGR",
-    "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/IPTV.m3u",
+# 影视仓（storeHouse）/ 原版 TVBox 共用的「聚合多仓订阅」清单
+# 每一项都是一个多仓/聚合入口，稳定性远高于单源。
+SOURCES = [
+    ("饭太硬",       "http://饭太硬.top/tv"),
+    ("肥猫",         "http://肥猫.love"),
+    ("巧技",         "http://cdn.qiaoji8.com/tvbox.json"),
+    ("运输车",       "https://weixine.net/ysc.json"),
+    ("吾爱有三",     "http://52bsj.vip:98/wuai"),
+    ("欧歌多仓",     "http://tv.nxog.top/api.php?mz=xb&id=1&b=欧歌"),
+    ("多多聚合多仓", "https://gitlab.com/duomv/apps/-/raw/main/fast.json"),
+    ("星辰",         "https://fmbox.cc/"),
+    ("小米",         "https://www.mpanso.com/小米/DEMO.json"),
+    ("道长",         "https://pastebin.com/raw/5NHaxyGR"),
 ]
 
-MAX_WAREHOUSE = 60
-HEADERS = {"User-Agent": "Mozilla/5.0 TVBox-AutoCollector/1.0"}
+# 直播源：单独放入影视仓的「直播」配置，不要混进 storeHouse（否则易 404）
+LIVE_SOURCES = [
+    ("国内直播IPTV", "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/IPTV.m3u"),
+    ("国际直播",     "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Global.m3u"),
+]
 
 
-async def fetch(session, url, timeout):
-    try:
-        async with session.get(url, timeout=timeout) as resp:
-            if resp.status == 200:
-                return await resp.text()
-    except Exception:
-        return None
-    return None
-
-
-def extract_urls(text):
-    out = set()
-    try:
-        data = json.loads(text)
-    except Exception:
-        return out
-    if isinstance(data, list):
-        for item in data:
-            if isinstance(item, dict):
-                for k in ("url", "sourceUrl"):
-                    if item.get(k):
-                        out.add(item[k])
-    elif isinstance(data, dict):
-        for key in ("urls", "storeHouse"):
-            val = data.get(key)
-            if isinstance(val, list):
-                for item in val:
-                    if isinstance(item, str):
-                        out.add(item)
-                    elif isinstance(item, dict):
-                        for k in ("url", "sourceUrl"):
-                            if item.get(k):
-                                out.add(item[k])
-    return out
-
-
-def host_of(url):
-    return url.split("//")[-1].split("/")[0] or url
-
-
-async def main():
-    connector = aiohttp.TCPConnector()
-    timeout = aiohttp.ClientTimeout(total=15)
-    live = {}
-
-    async with aiohttp.ClientSession(connector=connector, headers=HEADERS) as session:
-        for url in SEEDS:
-            text = await fetch(session, url, timeout)
-            if text is None:
-                print(f"[跳过] 不可达: {url}")
-                continue
-            if url.lower().endswith(".m3u") or "iptv" in url.lower() or "/live" in url.lower():
-                live[url] = 1
-                print(f"[直播] 有效: {url}")
-                continue
-            live[url] = 0
-            print(f"[影视] 有效(种子): {url}")
-            for s in extract_urls(text):
-                if s in live:
-                    continue
-                if await fetch(session, s, timeout) is not None:
-                    live[s] = 0
-                    print(f"[影视] 有效(子): {s}")
-                else:
-                    print(f"[跳过] 子接口不可达: {s}")
-
-    movie_urls = [u for u, t in live.items() if t == 0][:MAX_WAREHOUSE]
+def main():
     out_dir = os.path.dirname(os.path.abspath(__file__))
+
     # 影视仓专用：storeHouse 结构
     store = {"storeHouse": [
-        {"sourceName": host_of(u), "sourceUrl": u} for u in movie_urls
+        {"sourceName": name, "sourceUrl": url} for name, url in SOURCES
     ]}
     with open(os.path.join(out_dir, "tvbox_storehouse.json"), "w", encoding="utf-8") as f:
         json.dump(store, f, ensure_ascii=False, indent=2)
-    # 原版 TVBox 兼容：顶层数组
-    arr = [{"name": host_of(u), "url": u, "type": 0} for u in movie_urls]
-    arr += [{"name": host_of(u), "url": u, "type": 1} for u, t in live.items() if t == 1]
+
+    # 原版 TVBox 兼容：顶层数组（含直播）
+    arr = [{"name": name, "url": url, "type": 0} for name, url in SOURCES]
+    arr += [{"name": name, "url": url, "type": 1} for name, url in LIVE_SOURCES]
     with open(os.path.join(out_dir, "tvbox.json"), "w", encoding="utf-8") as f:
         json.dump(arr, f, ensure_ascii=False, indent=2)
 
-    print(f"\n生成完成：影视仓仓库 {len(movie_urls)} 个 + 直播 {sum(1 for t in live.values() if t==1)} 个")
+    print(f"生成完成：影视仓仓库 {len(SOURCES)} 个 + 直播 {len(LIVE_SOURCES)} 个"
+          f"（未做连通校验，直接发布精选聚合清单，规避 GitHub 无法连通国内源的问题）")
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

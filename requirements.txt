@@ -1,1 +1,2 @@
-aiohttp>=3.9
+# 本方案无需第三方依赖，collect.py 仅使用 Python 标准库（json / os）。
+# 保留此文件仅为兼容 update.yml 中的依赖安装步骤；如需自定义采集器再补充依赖。
