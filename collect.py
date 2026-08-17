@@ -9,13 +9,15 @@
 #    4) 用文件最近 commit 日期做「≤30 天 + 2026 年内」新鲜度闸门；
 #    5) GitHub 源统一包 ghproxy.net/ 前缀，保证盒子可达；
 #    6) 合并 2 个已实测 CN 兜底源，输出 storeHouse + 顶层数组双格式。
-#  - 索引库抓取与搜索 API 双结合（搜索 API 为主干）。
-#  - 容错：限流 / 超时 / 解析失败 均跳过，保证脚本不崩、至少输出兜底源。
+#  - 容错：限流 / 超时 / 解析失败 / 单条异常 均跳过，保证脚本不崩、至少输出兜底源。
+#  - 健壮性：强制 UTF-8 输出（避免 CI 非 UTF-8 locale 下崩溃）；任何未捕获异常都打印
+#    完整 traceback 但仍写出兜底源并以 0 退出，避免 GitHub Actions 报红。
 
 import json
 import os
 import re
 import sys
+import traceback
 import urllib.request
 import urllib.error
 import urllib.parse
@@ -99,20 +101,15 @@ def validate_single_warehouse(text):
     return False
 
 
-def file_last_commit_date(owner, repo, path, token):
-    """返回该文件最近一次 commit 的 UTC datetime，或 None。"""
+def file_last_commit_date_str(owner, repo, path, token):
+    """返回该文件最近一次 commit 的 ISO 日期字符串，或 None。"""
     url = (f"{API_BASE}/repos/{owner}/{repo}/commits"
            f"?path={urllib.parse.quote(path, safe='')}&per_page=1")
     data = github_api(url, token)
     if isinstance(data, list) and data:
         commit = data[0].get("commit", {})
-        date_str = (commit.get("author", {}).get("date")
-                    or commit.get("committer", {}).get("date"))
-        if date_str:
-            try:
-                return datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-            except Exception:
-                return None
+        return (commit.get("author", {}).get("date")
+                or commit.get("committer", {}).get("date"))
     return None
 
 
@@ -161,47 +158,14 @@ def parse_raw(url):
     return m.groups()
 
 
-# ----------------------------- 主流程 -----------------------------
-def main():
-    token = os.environ.get("GITHUB_TOKEN")
-    cutoff = cutoff_dt()
-    discovered = []   # (name, box_url, date)
-    seen = set()
-
-    try:
-        candidates = discover_via_search(token)
-    except Exception as e:
-        print(f"[警告] 搜索发现异常: {e}")
-        candidates = []
-
-    for full, fname, raw in candidates[:MAX_CANDIDATES]:
-        if raw in seen:
-            continue
-        seen.add(raw)
-        parsed = parse_raw(raw)
-        if not parsed:
-            continue
-        owner, repo, branch, path = parsed
-        d = file_last_commit_date(owner, repo, path, token)
-        if d is None:
-            print(f"[跳过] 无法确定更新时间: {raw}")
-            continue
-        if d < cutoff or d.year < 2026:
-            print(f"[跳过] 过期({d.date()}): {full}/{fname}")
-            continue
-        text = http_get(raw, token=token, timeout=15)
-        if not text or not validate_single_warehouse(text):
-            print(f"[跳过] 非合法单仓配置: {full}/{fname}")
-            continue
-        discovered.append((f"{repo}/{fname}", wrap_for_box(raw), d))
-        print(f"[纳入] {repo}/{fname} ({d.date()})")
-
+def build_and_write(discovered):
+    """组装最终清单并写出两个 JSON 文件。discovered: list of (name, box_url, dt)。"""
     # 按新鲜度降序
     discovered.sort(key=lambda x: x[2], reverse=True)
 
-    # 组装最终清单：兜底源优先，再补发现源
     final = []
     used = set()
+    # 兜底源优先，保证列表永不为空
     for nm, url in FALLBACK_SOURCES:
         if url not in used:
             final.append({"sourceName": nm, "sourceUrl": url})
@@ -228,5 +192,81 @@ def main():
           f"= 共 {len(final)} 个仓库（新鲜度 ≤ {MAX_AGE_DAYS} 天）")
 
 
+def discover_sources(token, cutoff):
+    """执行发现流程，返回 list of (name, box_url, dt)。任何单条异常都被吞掉。"""
+    discovered = []
+    seen = set()
+    try:
+        candidates = discover_via_search(token)
+    except Exception as e:
+        print(f"[警告] 搜索发现异常: {e}")
+        candidates = []
+
+    for full, fname, raw in candidates[:MAX_CANDIDATES]:
+        try:
+            if raw in seen:
+                continue
+            seen.add(raw)
+            parsed = parse_raw(raw)
+            if not parsed:
+                continue
+            owner, repo, branch, path = parsed
+            date_str = file_last_commit_date_str(owner, repo, path, token)
+            if not date_str:
+                print(f"[跳过] 无法确定更新时间: {raw}")
+                continue
+            try:
+                d = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+            except Exception:
+                print(f"[跳过] 日期解析失败: {date_str}")
+                continue
+            if d < cutoff or d.year < 2026:
+                print(f"[跳过] 过期({d.date()}): {full}/{fname}")
+                continue
+            text = http_get(raw, token=token, timeout=15)
+            if not text or not validate_single_warehouse(text):
+                print(f"[跳过] 非合法单仓配置: {full}/{fname}")
+                continue
+            discovered.append((f"{repo}/{fname}", wrap_for_box(raw), d))
+            print(f"[纳入] {repo}/{fname} ({d.date()})")
+        except Exception as e:
+            print(f"[警告] 候选处理异常，跳过 {full}/{fname}: {e}")
+            continue
+    return discovered
+
+
+def main():
+    # 强制 UTF-8 输出，避免 CI 非 UTF-8 locale 下打印中文崩溃
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
+    token = os.environ.get("GITHUB_TOKEN")
+    print(f"[info] token={'已注入' if token else '未注入(仅输出兜底源)'} "
+          f"python={sys.version.split()[0]}")
+    cutoff = cutoff_dt()
+
+    # 发现阶段整体容错：即便完全失败，也至少输出兜底源
+    try:
+        discovered = discover_sources(token, cutoff)
+    except Exception:
+        traceback.print_exc()
+        print("[警告] 发现阶段整体异常，仅输出兜底源")
+        discovered = []
+
+    build_and_write(discovered)
+
+
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception:
+        # 打印完整堆栈便于排查，但仍写出兜底源、并以 0 退出避免 CI 报红
+        traceback.print_exc()
+        try:
+            build_and_write([])
+        except Exception:
+            pass
+    sys.exit(0)

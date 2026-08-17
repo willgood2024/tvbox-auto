@@ -10,11 +10,6 @@
     "type": 0
   },
   {
-    "name": "tvbox/bb.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/bb.json",
-    "type": 0
-  },
-  {
     "name": "国内直播IPTV",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/IPTV.m3u",
     "type": 1

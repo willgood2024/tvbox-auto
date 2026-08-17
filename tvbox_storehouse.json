@@ -7,10 +7,6 @@
     {
       "sourceName": "王二小(兜底)",
       "sourceUrl": "https://9280.kstore.vip/newwex.json"
-    },
-    {
-      "sourceName": "tvbox/bb.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/bb.json"
     }
   ]
 }
