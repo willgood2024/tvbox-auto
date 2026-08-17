@@ -13,9 +13,9 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-      - name: Install deps
-        run: pip install -r requirements.txt
-      - name: Run collector
+      - name: Generate sources
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python collect.py
       - name: Commit & push
         run: |
@@ -26,5 +26,7 @@ jobs:
             echo "无变化，跳过提交"
           else
             git commit -m "auto: update tvbox sources $(date -u +%Y-%m-%d)"
+            git push
+          fiurces $(date -u +%Y-%m-%d)"
             git push
           fi
