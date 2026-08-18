@@ -10,6 +10,76 @@
     "type": 0
   },
   {
+    "name": "tvbox/my-private-api.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ansun1714/tvbox/main/my-private-api.json",
+    "type": 0
+  },
+  {
+    "name": "TVbox/TV4.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/sck03407/TVbox/main/TV4.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-sources/tvbox.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/tvbox.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-sources/curated-local.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated-local.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-sources/curated.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/tvbox.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/box.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/box.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/fun.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/jsm.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-sources/curated_universal.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated_universal.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/test.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/test.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/aa.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/aa.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/wv.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/wv.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/bb.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/bb.json",
+    "type": 0
+  },
+  {
     "name": "国内直播IPTV",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/IPTV.m3u",
     "type": 1
