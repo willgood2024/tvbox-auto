@@ -16,7 +16,11 @@ jobs:
       - name: Generate sources
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python collect.py
+          PYTHONUNBUFFERED: "1"
+          PYTHONIOENCODING: "utf-8"
+          LC_ALL: "C.UTF-8"
+          LANG: "C.UTF-8"
+        run: python3 collect.py
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
@@ -26,7 +30,5 @@ jobs:
             echo "无变化，跳过提交"
           else
             git commit -m "auto: update tvbox sources $(date -u +%Y-%m-%d)"
-            git push
-          fiurces $(date -u +%Y-%m-%d)"
             git push
           fi
