@@ -21,6 +21,14 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json"
     },
     {
+      "sourceName": "tvbox/api2.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cygoy/tvbox/main/api2.json"
+    },
+    {
+      "sourceName": "tvbox/tvbox.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json"
+    },
+    {
       "sourceName": "tvbox/aa.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/aa.json"
     },
@@ -33,8 +41,8 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json"
     },
     {
-      "sourceName": "tvbox_url/config.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/gitbochs/tvbox_url/main/config.json"
+      "sourceName": "tvbox-beifen/aiyouteng.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json"
     },
     {
       "sourceName": "tvbox/jsm.json",
