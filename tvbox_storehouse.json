@@ -21,12 +21,32 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json"
     },
     {
-      "sourceName": "tvbox/api2.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cygoy/tvbox/main/api2.json"
+      "sourceName": "tvbox/tvbox.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/leonardoliu91/tvbox/main/tvbox.json"
+    },
+    {
+      "sourceName": "tvbox-sources/tvbox.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/tvbox.json"
+    },
+    {
+      "sourceName": "tvbox-sources/curated-local.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated-local.json"
+    },
+    {
+      "sourceName": "tvbox-sources/version.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/version.json"
     },
     {
       "sourceName": "tvbox/tvbox.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json"
+    },
+    {
+      "sourceName": "alist-tvbox-plugins/spiders_v2.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/wab201/alist-tvbox-plugins/master/spiders_v2.json"
+    },
+    {
+      "sourceName": "tvbox-sources/curated_universal.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated_universal.json"
     },
     {
       "sourceName": "tvbox/aa.json",
@@ -39,6 +59,10 @@
     {
       "sourceName": "tvbox/fun.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json"
+    },
+    {
+      "sourceName": "tvbox-sources/curated.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated.json"
     },
     {
       "sourceName": "tvbox-beifen/aiyouteng.json",
