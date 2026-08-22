@@ -25,13 +25,18 @@
     "type": 0
   },
   {
-    "name": "tvbox/tvbox.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/leonardoliu91/tvbox/main/tvbox.json",
+    "name": "muhai-tvbox-sources/xhztv_4k_cleaned.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/wxadxmyz/muhai-tvbox-sources/main/xhztv_4k_cleaned.json",
     "type": 0
   },
   {
     "name": "tvbox-sources/tvbox.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/tvbox.json",
+    "type": 0
+  },
+  {
+    "name": "muhai-tvbox-sources/ysc.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/wxadxmyz/muhai-tvbox-sources/main/ysc.json",
     "type": 0
   },
   {
@@ -45,13 +50,13 @@
     "type": 0
   },
   {
-    "name": "tvbox/tvbox.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json",
+    "name": "tvbox-sources/curated.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated.json",
     "type": 0
   },
   {
-    "name": "alist-tvbox-plugins/spiders_v2.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/wab201/alist-tvbox-plugins/master/spiders_v2.json",
+    "name": "tvbox/jsm.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json",
     "type": 0
   },
   {
@@ -75,21 +80,6 @@
     "type": 0
   },
   {
-    "name": "tvbox-sources/curated.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-beifen/aiyouteng.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox/jsm.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json",
-    "type": 0
-  },
-  {
     "name": "tvbox/test.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/test.json",
     "type": 0
@@ -102,6 +92,11 @@
   {
     "name": "tvbox/bb.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/bb.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/a181.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/bear532/tvbox/main/a181.json",
     "type": 0
   },
   {
