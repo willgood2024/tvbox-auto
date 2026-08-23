@@ -10,6 +10,11 @@
     "type": 0
   },
   {
+    "name": "TVBOX/tvbox.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/LT2026823/TVBOX/main/tvbox.json",
+    "type": 0
+  },
+  {
     "name": "tvyuan/tvbox.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json",
     "type": 0
@@ -25,8 +30,8 @@
     "type": 0
   },
   {
-    "name": "muhai-tvbox-sources/xhztv_4k_cleaned.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/wxadxmyz/muhai-tvbox-sources/main/xhztv_4k_cleaned.json",
+    "name": "alist-tvbox-plugins/spiders_v2.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/wab201/alist-tvbox-plugins/master/spiders_v2.json",
     "type": 0
   },
   {
@@ -35,8 +40,8 @@
     "type": 0
   },
   {
-    "name": "muhai-tvbox-sources/ysc.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/wxadxmyz/muhai-tvbox-sources/main/ysc.json",
+    "name": "tvbox-config/tvbox_guazi.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/simonxu09notion/tvbox-config/master/tvbox_guazi.json",
     "type": 0
   },
   {
@@ -57,6 +62,11 @@
   {
     "name": "tvbox/jsm.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/tvbox_my_config.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/simonxu09notion/tvbox-config/master/tvbox_my_config.json",
     "type": 0
   },
   {
@@ -92,11 +102,6 @@
   {
     "name": "tvbox/bb.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/bb.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox/a181.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/bear532/tvbox/main/a181.json",
     "type": 0
   },
   {

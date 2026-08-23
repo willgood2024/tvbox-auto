@@ -9,6 +9,10 @@
       "sourceUrl": "https://9280.kstore.vip/newwex.json"
     },
     {
+      "sourceName": "TVBOX/tvbox.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/LT2026823/TVBOX/main/tvbox.json"
+    },
+    {
       "sourceName": "tvyuan/tvbox.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json"
     },
@@ -21,16 +25,16 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json"
     },
     {
-      "sourceName": "muhai-tvbox-sources/xhztv_4k_cleaned.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/wxadxmyz/muhai-tvbox-sources/main/xhztv_4k_cleaned.json"
+      "sourceName": "alist-tvbox-plugins/spiders_v2.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/wab201/alist-tvbox-plugins/master/spiders_v2.json"
     },
     {
       "sourceName": "tvbox-sources/tvbox.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/tvbox.json"
     },
     {
-      "sourceName": "muhai-tvbox-sources/ysc.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/wxadxmyz/muhai-tvbox-sources/main/ysc.json"
+      "sourceName": "tvbox-config/tvbox_guazi.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/simonxu09notion/tvbox-config/master/tvbox_guazi.json"
     },
     {
       "sourceName": "tvbox-sources/curated-local.json",
@@ -47,6 +51,10 @@
     {
       "sourceName": "tvbox/jsm.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json"
+    },
+    {
+      "sourceName": "tvbox-config/tvbox_my_config.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/simonxu09notion/tvbox-config/master/tvbox_my_config.json"
     },
     {
       "sourceName": "tvbox-sources/curated_universal.json",
@@ -75,10 +83,6 @@
     {
       "sourceName": "tvbox/bb.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/bb.json"
-    },
-    {
-      "sourceName": "tvbox/a181.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/bear532/tvbox/main/a181.json"
     }
   ]
 }
