@@ -21,24 +21,12 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json"
     },
     {
-      "sourceName": "tvbox-sources/tvbox.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/tvbox.json"
+      "sourceName": "tvbox/tvbox.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json"
     },
     {
-      "sourceName": "tvbox-sources/curated-local.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated-local.json"
-    },
-    {
-      "sourceName": "tvbox-sources/curated.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated.json"
-    },
-    {
-      "sourceName": "tvbox-sources/version.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/version.json"
-    },
-    {
-      "sourceName": "tvbox-sources/curated_universal.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated_universal.json"
+      "sourceName": "tvbox-beifen/aiyouteng.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json"
     },
     {
       "sourceName": "tvbox/fun.json",
@@ -47,10 +35,6 @@
     {
       "sourceName": "tvbox/test.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/test.json"
-    },
-    {
-      "sourceName": "tvbox/tvbox.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json"
     },
     {
       "sourceName": "tvbox/jsm.json",
@@ -63,10 +47,6 @@
     {
       "sourceName": "tvbox/box.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/box.json"
-    },
-    {
-      "sourceName": "tvbox-beifen/aiyouteng.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json"
     },
     {
       "sourceName": "tvbox/wv.json",
