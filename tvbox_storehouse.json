@@ -9,24 +9,40 @@
       "sourceUrl": "https://9280.kstore.vip/newwex.json"
     },
     {
-      "sourceName": "tvyuan/tvbox.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json"
+      "sourceName": "tvbox-subscribe/combined_full.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/fengs2021/tvbox-subscribe/main/combined_full.json"
     },
     {
-      "sourceName": "tvyuan/tvbox_full.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_full.json"
+      "sourceName": "tvbox-sources/tvbox.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/tvbox.json"
     },
     {
-      "sourceName": "tvyuan/tvbox_multi.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json"
+      "sourceName": "tvbox-sources/curated-local.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated-local.json"
     },
     {
-      "sourceName": "tvbox/spiders_v2.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/har01d5/tvbox/master/spiders_v2.json"
+      "sourceName": "tvbox-sources/version.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/version.json"
     },
     {
-      "sourceName": "tvbox/spiders.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/har01d5/tvbox/master/spiders.json"
+      "sourceName": "tvbox-sources/curated.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated.json"
+    },
+    {
+      "sourceName": "tvboxresource/merged.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/FLAG12321/tvboxresource/master/merged.json"
+    },
+    {
+      "sourceName": "tvbox/tvbox.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json"
+    },
+    {
+      "sourceName": "tvbox-sources/curated_universal.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated_universal.json"
+    },
+    {
+      "sourceName": "tvbox-beifen/aiyouteng.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json"
     },
     {
       "sourceName": "tvbox/test.json",

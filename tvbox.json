@@ -10,28 +10,48 @@
     "type": 0
   },
   {
-    "name": "tvyuan/tvbox.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json",
+    "name": "tvbox-subscribe/combined_full.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/fengs2021/tvbox-subscribe/main/combined_full.json",
     "type": 0
   },
   {
-    "name": "tvyuan/tvbox_full.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_full.json",
+    "name": "tvbox-sources/tvbox.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/tvbox.json",
     "type": 0
   },
   {
-    "name": "tvyuan/tvbox_multi.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json",
+    "name": "tvbox-sources/curated-local.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated-local.json",
     "type": 0
   },
   {
-    "name": "tvbox/spiders_v2.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/har01d5/tvbox/master/spiders_v2.json",
+    "name": "tvbox-sources/version.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/version.json",
     "type": 0
   },
   {
-    "name": "tvbox/spiders.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/har01d5/tvbox/master/spiders.json",
+    "name": "tvbox-sources/curated.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated.json",
+    "type": 0
+  },
+  {
+    "name": "tvboxresource/merged.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/FLAG12321/tvboxresource/master/merged.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/tvbox.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-sources/curated_universal.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated_universal.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-beifen/aiyouteng.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json",
     "type": 0
   },
   {
