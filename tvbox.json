@@ -15,8 +15,13 @@
     "type": 0
   },
   {
-    "name": "tvboxresource/merged.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/FLAG12321/tvboxresource/master/merged.json",
+    "name": "tvurl/dianshi.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/dianshi.json",
+    "type": 0
+  },
+  {
+    "name": "tvurl/jsm.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/jsm.json",
     "type": 0
   },
   {
@@ -40,6 +45,11 @@
     "type": 0
   },
   {
+    "name": "tvurl/fty.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/fty.json",
+    "type": 0
+  },
+  {
     "name": "tvbox/fun.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json",
     "type": 0
@@ -57,6 +67,46 @@
   {
     "name": "tvbox/box.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/box.json",
+    "type": 0
+  },
+  {
+    "name": "tvurl/0825.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/0825.json",
+    "type": 0
+  },
+  {
+    "name": "tvurl/9918.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/9918.json",
+    "type": 0
+  },
+  {
+    "name": "tvurl/99188.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/99188.json",
+    "type": 0
+  },
+  {
+    "name": "tvurl/js.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/js.json",
+    "type": 0
+  },
+  {
+    "name": "tvurl/0821.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/0821.json",
+    "type": 0
+  },
+  {
+    "name": "tvurl/0826.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/0826.json",
+    "type": 0
+  },
+  {
+    "name": "tvurl/0827.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/0827.json",
+    "type": 0
+  },
+  {
+    "name": "tvurl/367.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/367.json",
     "type": 0
   },
   {

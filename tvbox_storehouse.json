@@ -13,8 +13,12 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/fengs2021/tvbox-subscribe/main/combined_full.json"
     },
     {
-      "sourceName": "tvboxresource/merged.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/FLAG12321/tvboxresource/master/merged.json"
+      "sourceName": "tvurl/dianshi.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/dianshi.json"
+    },
+    {
+      "sourceName": "tvurl/jsm.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/jsm.json"
     },
     {
       "sourceName": "tvbox-beifen/aiyouteng.json",
@@ -33,6 +37,10 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/yt.json"
     },
     {
+      "sourceName": "tvurl/fty.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/fty.json"
+    },
+    {
       "sourceName": "tvbox/fun.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json"
     },
@@ -47,6 +55,38 @@
     {
       "sourceName": "tvbox/box.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/box.json"
+    },
+    {
+      "sourceName": "tvurl/0825.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/0825.json"
+    },
+    {
+      "sourceName": "tvurl/9918.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/9918.json"
+    },
+    {
+      "sourceName": "tvurl/99188.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/99188.json"
+    },
+    {
+      "sourceName": "tvurl/js.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/js.json"
+    },
+    {
+      "sourceName": "tvurl/0821.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/0821.json"
+    },
+    {
+      "sourceName": "tvurl/0826.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/0826.json"
+    },
+    {
+      "sourceName": "tvurl/0827.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/0827.json"
+    },
+    {
+      "sourceName": "tvurl/367.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/ne7359/tvurl/main/367.json"
     }
   ]
 }
