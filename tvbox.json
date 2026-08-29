@@ -15,38 +15,8 @@
     "type": 0
   },
   {
-    "name": "tvbox-sources/tvbox.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/tvbox.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-sources/curated-local.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated-local.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-sources/version.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/version.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-sources/curated.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated.json",
-    "type": 0
-  },
-  {
     "name": "tvboxresource/merged.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/FLAG12321/tvboxresource/master/merged.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox/tvbox.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-sources/curated_universal.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jifeng250/tvbox-sources/main/curated_universal.json",
     "type": 0
   },
   {
