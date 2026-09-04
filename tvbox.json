@@ -40,6 +40,21 @@
     "type": 0
   },
   {
+    "name": "niuber/api.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/niuber/niuber/main/tvbox/api.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-aggregator/ok.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/yangclaw2026-png/tvbox-aggregator/main/ok.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-aggregator/movies.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/yangclaw2026-png/tvbox-aggregator/main/movies.json",
+    "type": 0
+  },
+  {
     "name": "tvbox/wv.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/wv.json",
     "type": 0
@@ -55,8 +70,13 @@
     "type": 0
   },
   {
-    "name": "Tomorrow/tvbox.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/tushen6/Tomorrow/master/tvbox.json",
+    "name": "filmcollector-pages/combined.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/lidawei1985/filmcollector-pages/main/combined.json",
+    "type": 0
+  },
+  {
+    "name": "filmcollector-pages/subscribe.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/lidawei1985/filmcollector-pages/main/subscribe.json",
     "type": 0
   },
   {
