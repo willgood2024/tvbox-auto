@@ -15,8 +15,23 @@
     "type": 0
   },
   {
-    "name": "tvbox-beifen/aiyouteng.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json",
+    "name": "tvyuan/tvbox.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json",
+    "type": 0
+  },
+  {
+    "name": "tvyuan/tvbox_full.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_full.json",
+    "type": 0
+  },
+  {
+    "name": "tvyuan/tvbox_multi.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox_url/config.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/gitbochs/tvbox_url/main/config.json",
     "type": 0
   },
   {
@@ -42,16 +57,6 @@
   {
     "name": "niuber/api.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/niuber/niuber/main/tvbox/api.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-aggregator/ok.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/yangclaw2026-png/tvbox-aggregator/main/ok.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-aggregator/movies.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/yangclaw2026-png/tvbox-aggregator/main/movies.json",
     "type": 0
   },
   {
