@@ -25,6 +25,14 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json"
     },
     {
+      "sourceName": "tvbox/api.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/obs-tv/tvbox/main/api.json"
+    },
+    {
+      "sourceName": "tvbox/fm.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/obs-tv/tvbox/main/fm.json"
+    },
+    {
       "sourceName": "tvbox_url/config.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/gitbochs/tvbox_url/main/config.json"
     },
@@ -45,6 +53,10 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/test.json"
     },
     {
+      "sourceName": "tvbox-beifen/aiyouteng.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json"
+    },
+    {
       "sourceName": "niuber/api.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/niuber/niuber/main/tvbox/api.json"
     },
@@ -59,14 +71,6 @@
     {
       "sourceName": "tvbox/jsm.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json"
-    },
-    {
-      "sourceName": "filmcollector-pages/combined.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/lidawei1985/filmcollector-pages/main/combined.json"
-    },
-    {
-      "sourceName": "filmcollector-pages/subscribe.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/lidawei1985/filmcollector-pages/main/subscribe.json"
     }
   ]
 }
