@@ -23,12 +23,21 @@ jobs:
         run: python3 collect.py
       - name: Commit & push
         run: |
+          set -x
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tvbox.json tvbox_storehouse.json
+          echo "### git status"; git status --short
+          echo "### staged diff (stat)"; git diff --cached --stat
           if git diff --cached --quiet; then
             echo "无变化，跳过提交"
+            exit 0
+          fi
+          git commit -m "auto: update tvbox sources $(date -u +%Y-%m-%d)"
+          echo "### pushing origin HEAD:main"
+          if git push origin HEAD:main; then
+            echo "推送成功"
           else
-            git commit -m "auto: update tvbox sources $(date -u +%Y-%m-%d)"
-            git push
+            echo "::error::git push 失败。最常见原因：1) Settings→Actions→General 中 Workflow permissions 被设为 Read-only（需改为 Read and write）；2) main 分支开了分支保护 Require a pull request（需允许 github-actions[bot] 绕过，或改用非保护分支）。"
+            exit 1
           fi
