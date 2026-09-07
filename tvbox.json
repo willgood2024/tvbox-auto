@@ -10,38 +10,48 @@
     "type": 0
   },
   {
-    "name": "tvbox-subscribe/combined_full.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/fengs2021/tvbox-subscribe/main/combined_full.json",
+    "name": "tvbox-sources/sources.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/Daniel-csvw/tvbox-sources/main/sources.json",
     "type": 0
   },
   {
-    "name": "tvyuan/tvbox.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json",
+    "name": "TVBox/yao.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/Basic-yao/TVBox/main/yao.json",
     "type": 0
   },
   {
-    "name": "tvyuan/tvbox_full.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_full.json",
+    "name": "tvbox/dianshi.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/dianshi.json",
     "type": 0
   },
   {
-    "name": "tvyuan/tvbox_multi.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json",
+    "name": "tvbox/fty.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/fty.json",
     "type": 0
   },
   {
-    "name": "tvbox/api.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/obs-tv/tvbox/main/api.json",
+    "name": "tvbox/jsm.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/jsm.json",
     "type": 0
   },
   {
-    "name": "tvbox/fm.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/obs-tv/tvbox/main/fm.json",
+    "name": "tvbox-config/dianshi.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/vampireisoves/tvbox-config/main/dianshi.json",
     "type": 0
   },
   {
-    "name": "tvbox_url/config.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/gitbochs/tvbox_url/main/config.json",
+    "name": "tvbox-config/fty.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/vampireisoves/tvbox-config/main/fty.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/jsm.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/vampireisoves/tvbox-config/main/jsm.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/X.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/X.json",
     "type": 0
   },
   {
@@ -65,13 +75,68 @@
     "type": 0
   },
   {
-    "name": "tvbox-beifen/aiyouteng.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json",
+    "name": "tvbox/0825.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/0825.json",
     "type": 0
   },
   {
-    "name": "niuber/api.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/niuber/niuber/main/tvbox/api.json",
+    "name": "tvbox/0826.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/0826.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/0827.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/0827.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/367.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/367.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/9918.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/9918.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/99188.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/99188.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/js.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/js.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/one.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/one.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/pj.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/pj.json",
+    "type": 0
+  },
+  {
+    "name": "TVBOX/z-2K24.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/franksun1211/TVBOX/main/z-2K24.json",
+    "type": 0
+  },
+  {
+    "name": "TVBOX/0903.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/franksun1211/TVBOX/main/0903.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/api.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/api.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/x.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/x.json",
     "type": 0
   },
   {
@@ -87,6 +152,51 @@
   {
     "name": "tvbox/jsm.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/tvbox.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/leonardoliu91/tvbox/main/tvbox.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/0825.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/vampireisoves/tvbox-config/main/0825.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/9918.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/vampireisoves/tvbox-config/main/9918.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/99188.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/vampireisoves/tvbox-config/main/99188.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/js.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/vampireisoves/tvbox-config/main/js.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/0821.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/vampireisoves/tvbox-config/main/0821.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/0826.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/vampireisoves/tvbox-config/main/0826.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/0827.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/vampireisoves/tvbox-config/main/0827.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/367.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/vampireisoves/tvbox-config/main/367.json",
     "type": 0
   },
   {
