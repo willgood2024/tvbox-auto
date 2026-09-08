@@ -9,10 +9,6 @@
       "sourceUrl": "https://9280.kstore.vip/newwex.json"
     },
     {
-      "sourceName": "tvbox-subscribe/combined_full.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/fengs2021/tvbox-subscribe/main/combined_full.json"
-    },
-    {
       "sourceName": "tvyuan/tvbox.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json"
     },
@@ -25,8 +21,8 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json"
     },
     {
-      "sourceName": "tvbox/tvbox.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json"
+      "sourceName": "tvbox-beifen/aiyouteng.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json"
     },
     {
       "sourceName": "tvbox/aa.json",

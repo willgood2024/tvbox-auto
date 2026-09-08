@@ -10,11 +10,6 @@
     "type": 0
   },
   {
-    "name": "tvbox-subscribe/combined_full.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/fengs2021/tvbox-subscribe/main/combined_full.json",
-    "type": 0
-  },
-  {
     "name": "tvyuan/tvbox.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json",
     "type": 0
@@ -30,8 +25,8 @@
     "type": 0
   },
   {
-    "name": "tvbox/tvbox.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/jiusanzhou/tvbox/main/tvbox.json",
+    "name": "tvbox-beifen/aiyouteng.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json",
     "type": 0
   },
   {
