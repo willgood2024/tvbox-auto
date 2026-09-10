@@ -13,28 +13,40 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/fengs2021/tvbox-subscribe/main/combined_full.json"
     },
     {
+      "sourceName": "tvyuan/tvbox.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json"
+    },
+    {
+      "sourceName": "tvyuan/tvbox_full.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_full.json"
+    },
+    {
+      "sourceName": "tvyuan/tvbox_multi.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json"
+    },
+    {
       "sourceName": "tvbox-beifen/aiyouteng.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json"
-    },
-    {
-      "sourceName": "tvbox/box.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/box.json"
-    },
-    {
-      "sourceName": "tvbox/jsm.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json"
     },
     {
       "sourceName": "tvbox/aa.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/aa.json"
     },
     {
-      "sourceName": "tvbox/fun.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json"
+      "sourceName": "tvbox/jsm.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json"
     },
     {
       "sourceName": "tvbox/test.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/test.json"
+    },
+    {
+      "sourceName": "tvbox/box.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/box.json"
+    },
+    {
+      "sourceName": "tvbox/fun.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json"
     },
     {
       "sourceName": "niuber/api.json",
