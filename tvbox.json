@@ -15,23 +15,8 @@
     "type": 0
   },
   {
-    "name": "tvyuan/tvbox.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox.json",
-    "type": 0
-  },
-  {
-    "name": "tvyuan/tvbox_full.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_full.json",
-    "type": 0
-  },
-  {
-    "name": "tvyuan/tvbox_multi.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-beifen/aiyouteng.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json",
+    "name": "tvbox-iptv/tvbox0.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox0.json",
     "type": 0
   },
   {
