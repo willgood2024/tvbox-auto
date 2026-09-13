@@ -25,18 +25,6 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json"
     },
     {
-      "sourceName": "tvbox/XC_decrypted.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/XC_decrypted.json"
-    },
-    {
-      "sourceName": "xiangcun-tvbox/config.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/geuclide97/xiangcun-tvbox/main/config.json"
-    },
-    {
-      "sourceName": "tvbox/api2.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cygoy/tvbox/main/api2.json"
-    },
-    {
       "sourceName": "tvbox/aa.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/aa.json"
     },
@@ -57,12 +45,12 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json"
     },
     {
-      "sourceName": "tvbox/api.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cygoy/tvbox/main/api.json"
+      "sourceName": "okay/laosj.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/songlees355-wq/okay/main/laosj.json"
     },
     {
-      "sourceName": "niuber/api.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/niuber/niuber/main/tvbox/api.json"
+      "sourceName": "okay/tvbox.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/songlees355-wq/okay/main/tvbox.json"
     },
     {
       "sourceName": "tvbox/wv.json",

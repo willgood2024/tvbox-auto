@@ -30,21 +30,6 @@
     "type": 0
   },
   {
-    "name": "tvbox/XC_decrypted.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/child9527/tvbox/main/XC_decrypted.json",
-    "type": 0
-  },
-  {
-    "name": "xiangcun-tvbox/config.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/geuclide97/xiangcun-tvbox/main/config.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox/api2.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cygoy/tvbox/main/api2.json",
-    "type": 0
-  },
-  {
     "name": "tvbox/aa.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/aa.json",
     "type": 0
@@ -70,13 +55,13 @@
     "type": 0
   },
   {
-    "name": "tvbox/api.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cygoy/tvbox/main/api.json",
+    "name": "okay/laosj.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/songlees355-wq/okay/main/laosj.json",
     "type": 0
   },
   {
-    "name": "niuber/api.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/niuber/niuber/main/tvbox/api.json",
+    "name": "okay/tvbox.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/songlees355-wq/okay/main/tvbox.json",
     "type": 0
   },
   {
