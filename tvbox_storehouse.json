@@ -25,12 +25,28 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json"
     },
     {
-      "sourceName": "tvbox/aa.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/aa.json"
+      "sourceName": "tvbox-iptv/tvbox3.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox3.json"
+    },
+    {
+      "sourceName": "tvbox-iptv/tvbox.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox.json"
+    },
+    {
+      "sourceName": "tvbox-iptv/tvbox2.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox2.json"
     },
     {
       "sourceName": "tvbox/box.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/box.json"
+    },
+    {
+      "sourceName": "tvbox-iptv/tvbox1.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox1.json"
+    },
+    {
+      "sourceName": "tvbox/aa.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/aa.json"
     },
     {
       "sourceName": "tvbox/jsm.json",
@@ -45,12 +61,12 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json"
     },
     {
-      "sourceName": "okay/laosj.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/songlees355-wq/okay/main/laosj.json"
+      "sourceName": "tvbox-aggregator/ok.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/yangclaw2026-png/tvbox-aggregator/main/ok.json"
     },
     {
-      "sourceName": "okay/tvbox.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/songlees355-wq/okay/main/tvbox.json"
+      "sourceName": "tvbox-aggregator/movies.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/yangclaw2026-png/tvbox-aggregator/main/movies.json"
     },
     {
       "sourceName": "tvbox/wv.json",
