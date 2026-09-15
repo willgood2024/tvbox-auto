@@ -30,8 +30,33 @@
     "type": 0
   },
   {
+    "name": "tvbox/api.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/hangxiaocaimi/tvbox/main/api.json",
+    "type": 0
+  },
+  {
     "name": "tvbox-iptv/tvbox3.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox3.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/api3.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/hangxiaocaimi/tvbox/main/api3.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/api2.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/hangxiaocaimi/tvbox/main/api2.json",
+    "type": 0
+  },
+  {
+    "name": "labs-tvbox/projetos.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/Proddy-0/labs-tvbox/main/projetos.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/jsm.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json",
     "type": 0
   },
   {
@@ -60,11 +85,6 @@
     "type": 0
   },
   {
-    "name": "tvbox/jsm.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json",
-    "type": 0
-  },
-  {
     "name": "tvbox/test.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/test.json",
     "type": 0
@@ -72,16 +92,6 @@
   {
     "name": "tvbox/fun.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-aggregator/ok.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/yangclaw2026-png/tvbox-aggregator/main/ok.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-aggregator/movies.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/yangclaw2026-png/tvbox-aggregator/main/movies.json",
     "type": 0
   },
   {
