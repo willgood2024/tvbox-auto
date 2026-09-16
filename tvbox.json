@@ -30,38 +30,33 @@
     "type": 0
   },
   {
-    "name": "tvbox/api.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/hangxiaocaimi/tvbox/main/api.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-iptv/tvbox3.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox3.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox/api3.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/hangxiaocaimi/tvbox/main/api3.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox/api2.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/hangxiaocaimi/tvbox/main/api2.json",
-    "type": 0
-  },
-  {
-    "name": "labs-tvbox/projetos.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/Proddy-0/labs-tvbox/main/projetos.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox/jsm.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json",
+    "name": "fty44safe/config.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/fty44safe/main/config.json",
     "type": 0
   },
   {
     "name": "tvbox-iptv/tvbox.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-iptv/tvbox1.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox1.json",
+    "type": 0
+  },
+  {
+    "name": "fty44safe/fty44v3.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/fty44safe/main/fty44v3.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-beifen/aiyouteng.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox/jsm.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json",
     "type": 0
   },
   {
@@ -72,11 +67,6 @@
   {
     "name": "tvbox/box.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/box.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-iptv/tvbox1.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox1.json",
     "type": 0
   },
   {

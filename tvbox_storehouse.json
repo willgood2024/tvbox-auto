@@ -25,32 +25,28 @@
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/25175/tvyuan/master/tvbox_multi.json"
     },
     {
-      "sourceName": "tvbox/api.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/hangxiaocaimi/tvbox/main/api.json"
-    },
-    {
-      "sourceName": "tvbox-iptv/tvbox3.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox3.json"
-    },
-    {
-      "sourceName": "tvbox/api3.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/hangxiaocaimi/tvbox/main/api3.json"
-    },
-    {
-      "sourceName": "tvbox/api2.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/hangxiaocaimi/tvbox/main/api2.json"
-    },
-    {
-      "sourceName": "labs-tvbox/projetos.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/Proddy-0/labs-tvbox/main/projetos.json"
-    },
-    {
-      "sourceName": "tvbox/jsm.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json"
+      "sourceName": "fty44safe/config.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/fty44safe/main/config.json"
     },
     {
       "sourceName": "tvbox-iptv/tvbox.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox.json"
+    },
+    {
+      "sourceName": "tvbox-iptv/tvbox1.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox1.json"
+    },
+    {
+      "sourceName": "fty44safe/fty44v3.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/fty44safe/main/fty44v3.json"
+    },
+    {
+      "sourceName": "tvbox-beifen/aiyouteng.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json"
+    },
+    {
+      "sourceName": "tvbox/jsm.json",
+      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json"
     },
     {
       "sourceName": "tvbox-iptv/tvbox2.json",
@@ -59,10 +55,6 @@
     {
       "sourceName": "tvbox/box.json",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/box.json"
-    },
-    {
-      "sourceName": "tvbox-iptv/tvbox1.json",
-      "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox1.json"
     },
     {
       "sourceName": "tvbox/aa.json",
