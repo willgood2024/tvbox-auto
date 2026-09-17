@@ -30,8 +30,8 @@
     "type": 0
   },
   {
-    "name": "fty44safe/config.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/fty44safe/main/config.json",
+    "name": "tvbox-iptv/tvbox1.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox1.json",
     "type": 0
   },
   {
@@ -40,28 +40,13 @@
     "type": 0
   },
   {
-    "name": "tvbox-iptv/tvbox1.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox1.json",
-    "type": 0
-  },
-  {
-    "name": "fty44safe/fty44v3.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/fty44safe/main/fty44v3.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-beifen/aiyouteng.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/city10666/tvbox-beifen/main/aiyouteng.json",
+    "name": "okay/laosj.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/songlees355-wq/okay/main/laosj.json",
     "type": 0
   },
   {
     "name": "tvbox/jsm.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json",
-    "type": 0
-  },
-  {
-    "name": "tvbox-iptv/tvbox2.json",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/gqzh568/tvbox-iptv/main/tvbox2.json",
     "type": 0
   },
   {
@@ -82,6 +67,11 @@
   {
     "name": "tvbox/fun.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/fun.json",
+    "type": 0
+  },
+  {
+    "name": "okay/tvbox.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/songlees355-wq/okay/main/tvbox.json",
     "type": 0
   },
   {
