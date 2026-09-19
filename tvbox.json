@@ -30,6 +30,56 @@
     "type": 0
   },
   {
+    "name": "tvbox-config/jsm.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/w0878512-glitch/tvbox-config/main/jsm.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/final.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/final.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/0821.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/w0878512-glitch/tvbox-config/main/0821.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/0825.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/w0878512-glitch/tvbox-config/main/0825.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/0826.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/w0878512-glitch/tvbox-config/main/0826.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/9918.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/w0878512-glitch/tvbox-config/main/9918.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/99188.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/w0878512-glitch/tvbox-config/main/99188.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/dianshi.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/w0878512-glitch/tvbox-config/main/dianshi.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/fty.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/w0878512-glitch/tvbox-config/main/fty.json",
+    "type": 0
+  },
+  {
+    "name": "tvbox-config/js.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/w0878512-glitch/tvbox-config/main/js.json",
+    "type": 0
+  },
+  {
     "name": "tvbox/box.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/box.json",
     "type": 0
@@ -37,6 +87,91 @@
   {
     "name": "tvbox/jsm.json",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/cluntop/tvbox/main/jsm.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/99-merged-full.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/99-merged-full.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/00-sentinel-femao-apk.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/00-sentinel-femao-apk.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/00-sentinel-nobuilt.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/00-sentinel-nobuilt.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/00-sentinel-okcat.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/00-sentinel-okcat.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/00-sentinel.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/00-sentinel.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/01-jpys-jinpai.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/01-jpys-jinpai.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/02-bili.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/02-bili.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/03-gz360.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/03-gz360.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/04-sp360.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/04-sp360.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/05-auete.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/05-auete.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/06-kuaikan.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/06-kuaikan.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/07-freeok.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/07-freeok.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/08-nmys.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/08-nmys.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/09-vidhub2.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/09-vidhub2.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/10-xbpq.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/10-xbpq.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/11-wogw.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/11-wogw.json",
+    "type": 0
+  },
+  {
+    "name": "ok-tvbox-config/12-lvdou.json",
+    "url": "https://ghproxy.net/https://raw.githubusercontent.com/shengshimeiyan/ok-tvbox-config/main/12-lvdou.json",
     "type": 0
   },
   {
