@@ -1,53 +1,100 @@
 #!/usr/bin/env python3
-# TVBox / 影视仓 自动发现 + 自动更新器（零第三方依赖，仅标准库）
-#
-# 设计：
-#  - 不再写死清单。每次运行自动：
-#    1) 通过 GitHub 搜索 API 发现近期更新的 tvbox 仓库；
-#    2) 枚举仓库（含 tvbox/box/config 子目录）下的 JSON 文件；
-#    3) 校验其是否为合法「单仓配置」(含 sites / storeHouse / video)；
-#    4) 用文件最近 commit 日期做「≤30 天 + 2026 年内」新鲜度闸门；
-#    5) GitHub 源统一包 ghproxy.net/ 前缀，保证盒子可达；
-#    6) 合并 2 个已实测 CN 兜底源，输出 storeHouse + 顶层数组双格式。
-#  - 容错：限流 / 超时 / 解析失败 / 单条异常 均跳过，保证脚本不崩、至少输出兜底源。
-#  - 健壮性：强制 UTF-8 输出（避免 CI 非 UTF-8 locale 下崩溃）；任何未捕获异常都打印
-#    完整 traceback 但仍写出兜底源并以 0 退出，避免 GitHub Actions 报红。
+# -*- coding: utf-8 -*-
+"""
+影视仓 / TVBox  纯净源生成器（严格模式）
+=========================================
+目标：解决「源有名字但点开用不了」和「网盘源要登录」两大问题。
+
+做法（在“站点(sites)”这一层做清洗，而不是只订阅别人的仓库）：
+  1) 从一批上游配置（单仓 sites / 多仓 storeHouse 会递归一层）中提取全部 sites；
+  2) 【严格】只保留 type == 1 —— 直连苹果CMS采集站 API，不依赖 spider.jar / 远程 JS，
+     这也是国内网络下真正能用的那类源；
+  3) 【全删网盘】按 api / name 关键字剔除 阿里/夸克/UC/迅雷/AList/WebDAV/盘搜 等；
+  4) 按 api 去重，并对每个 api 做一次存活探测（alive / dead / unknown）——
+     dead(明确 4xx5xx 或返回非 JSON) 剔除；unknown(DNS/超时，多为探测侧网络问题) 保留，
+     避免把“你盒子连得通、只是运行器连不上”的源误杀；
+  5) 合并上游的 parses / rules / flags / doh / lives 等附属配置；
+  6) 输出自建单仓配置 tvbox_clean.json，并生成指向它的 storeHouse / 顶层数组文件。
+
+兜底：内置 5 个已实测存活的直连采集站，保证任何情况下产物都非空、都能用。
+
+零第三方依赖，仅标准库。
+"""
 
 import json
 import os
 import re
 import sys
 import traceback
-import urllib.request
 import urllib.error
 import urllib.parse
-from datetime import datetime, timezone, timedelta
+import urllib.request
+from collections import OrderedDict
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timedelta, timezone
 
-# ----------------------------- 配置 -----------------------------
-FALLBACK_SOURCES = [
-    # 已实测可用的 CN 单仓源，始终纳入，保证列表非空（其新鲜度无法从 runner 验证，作安全网）
-    ("猎手(兜底)", "https://raw.liucn.cc/box/m.json"),
-    ("王二小(兜底)", "https://9280.kstore.vip/newwex.json"),
+# ============================ 配置 ============================
+# 已实测存活的直连采集站（type 1），始终纳入，保证产物永不为空
+SEED_SITES = [
+    ("百度采集", "https://api.apibdzy.com/api.php/provide/vod"),
+    ("暴风采集", "https://bfzyapi.com/api.php/provide/vod"),
+    ("索尼采集", "https://suoniapi.com/api.php/provide/vod"),
+    ("量子采集", "https://cj.lziapi.com/api.php/provide/vod"),
+    ("非凡采集", "http://cj.ffzyapi.com/api.php/provide/vod"),
 ]
 
-LIVE_SOURCES = [
-    ("国内直播IPTV", "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/IPTV.m3u"),
-    ("国际直播",     "https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Global.m3u"),
+# 已知上游配置（单仓 sites 或 多仓 storeHouse 均可，多仓会递归一层）
+KNOWN_CONFIGS = [
+    "https://raw.githubusercontent.com/gaotianliuyun/gao/master/0821.json",
+    "https://raw.githubusercontent.com/gaotianliuyun/gao/master/0825.json",
+    "https://raw.githubusercontent.com/gaotianliuyun/gao/master/0827.json",
+    "https://raw.githubusercontent.com/gaotianliuyun/gao/master/0826.json",
+    "https://raw.githubusercontent.com/gaotianliuyun/gao/master/0707.json",
+    "https://dxawi.github.io/0/0.json",
+    "https://raw.liucn.cc/box/m.json",
+    "https://9280.kstore.vip/newwex.json",
 ]
 
+# GitHub 搜索：自动发现更多近期更新的配置仓库，扩大 type1 源池
 SEARCH_QUERY = "tvbox"
 SEARCH_PER_PAGE = 20
-MAX_AGE_DAYS = 30          # 新鲜度闸门：距今天 ≤ 30 天
-MAX_SOURCES = 40           # storeHouse 上限
-GH_PROXY = "https://ghproxy.net/"
-SELF_REPO = "willgood2024/tvbox-auto"   # 跳过自身，避免递归
+MAX_AGE_DAYS = 30           # 新鲜度闸门：距今天 ≤ 30 天
+MAX_CONFIGS = 60            # 最多抓取的配置文件数
+MAX_SITES = 150             # 最终保留的源数量上限
+PROBE_WORKERS = 16
+PROBE_TIMEOUT = 8
+
+GH_PROXY = "https://ghproxy.net/"          # 主镜像（实时代理，无缓存）
+GH_PROXY2 = "https://ghfast.top/"          # 备用镜像
+SELF_REPO = "willgood2024/tvbox-auto"      # 本地运行时使用；CI 里用 GITHUB_REPOSITORY 覆盖
 API_BASE = "https://api.github.com"
-UA = "Mozilla/5.0 TVBox-AutoCollector/2.0"
-SUBDIRS = {"tvbox", "box", "config"}     # 额外下钻的目录
-MAX_CANDIDATES = 80                       # 单次处理候选数上限
+UA = "Mozilla/5.0 (Linux; Android 11) AppleWebKit/537.36 Chrome/110 Mobile Safari/537.36"
+SUBDIRS = {"tvbox", "box", "config"}
+
+# 网盘源特征（type==1 已基本排除网盘，这里是第二道防线，宁缺毋滥）
+PAN_NAME_KEYWORDS = [
+    "网盘", "云盘", "盘搜", "盘Se", "米搜", "抠搜", "夸搜", "Up搜", "易搜",
+    "AList", "alist", "WebDAV", "webdav", "本地存储", "夸克", "迅雷", "115",
+    "天翼", "移动云盘", "阿里云盘", "七夜", "Zhaozy", "小雅",
+]
+PAN_API_KEYWORDS = [
+    "pan", "alist", "webdav", "quark", "xunlei", "115", "caiyun", "189.cn",
+    "alipan", "dovx", "zhaozy", "pansou", "pansearch",
+]
+
+# 成人 / 违规内容源：按合规要求一律剔除
+BLOCK_NAME_KEYWORDS = [
+    "大奶子", "色猫", "麻豆", "抖阴", "番号", "奶香", "松视", "souav", "蜜桃",
+    "潘甜甜", "里番", "伦理", "情色", "成人", "福利视频", "午夜",
+]
+BLOCK_API_KEYWORDS = [
+    "souavzy", "91md.me", "semaozy", "maozyapi", "sexnguon", "888dav", "naixxzy",
+    "danaizi", "apilj.com", "aosikazy", "shayuapi", "huosuapi", "heiapi", "slapibf",
+    "apittzy", "155api", "yikanapi", "lbapi9", "ddapi.cc", "523zyw", "mgzyz1", "apiyutu",
+]
 
 
-# ----------------------------- 工具函数 -----------------------------
+# ============================ 工具 ============================
 def now_utc():
     return datetime.now(timezone.utc)
 
@@ -56,65 +103,187 @@ def cutoff_dt():
     return now_utc() - timedelta(days=MAX_AGE_DAYS)
 
 
-def http_get(url, token=None, timeout=15, as_text=True):
+def http_get(url, token=None, timeout=15):
+    """返回文本或 None（任何异常都吞掉）。"""
     headers = {"User-Agent": UA, "Accept": "*/*"}
     if token:
         headers["Authorization"] = f"Bearer {token}"
-    req = urllib.request.Request(url, headers=headers)
     try:
+        req = urllib.request.Request(url, headers=headers)
         with urllib.request.urlopen(req, timeout=timeout) as resp:
-            data = resp.read()
-            return data.decode("utf-8", "ignore") if as_text else data
+            return resp.read().decode("utf-8", "ignore")
     except Exception:
         return None
 
 
-def github_api(url, token):
-    text = http_get(url, token=token, timeout=20)
+def _strip_jsonc(text):
+    """去掉 // 行注释与 /* */ 块注释（字符串内不处理），提升对“伪 JSON”配置的兼容。"""
+    out, in_str, esc, i, n = [], False, False, 0, len(text)
+    while i < n:
+        c = text[i]
+        if in_str:
+            out.append(c)
+            if esc:
+                esc = False
+            elif c == "\\":
+                esc = True
+            elif c == '"':
+                in_str = False
+            i += 1
+            continue
+        if c == '"':
+            in_str = True
+            out.append(c)
+            i += 1
+            continue
+        if c == "/" and i + 1 < n and text[i + 1] == "/":
+            while i < n and text[i] not in "\r\n":
+                i += 1
+            continue
+        if c == "/" and i + 1 < n and text[i + 1] == "*":
+            i += 2
+            while i + 1 < n and not (text[i] == "*" and text[i + 1] == "/"):
+                i += 1
+            i += 2
+            continue
+        out.append(c)
+        i += 1
+    return "".join(out)
+
+
+def load_json(text):
     if not text:
         return None
     try:
         return json.loads(text)
     except Exception:
+        pass
+    try:
+        return json.loads(_strip_jsonc(text))
+    except Exception:
         return None
 
 
-def is_github_raw(url):
-    return "raw.githubusercontent.com" in url
-
-
-def wrap_for_box(url):
-    """GitHub 源统一包 ghproxy 前缀，保证盒子可达；其余原样。"""
-    return GH_PROXY + url if is_github_raw(url) else url
-
-
-def validate_single_warehouse(text):
-    """必须是合法「单仓配置」：含 sites / storeHouse / video，或为非空数组。"""
-    try:
-        data = json.loads(text)
-    except Exception:
-        return False
+def extract(data):
+    """返回 (sites, sub_urls)：sites 为本配置直接给出的站点；sub_urls 为需下钻的子配置。"""
+    sites, subs = [], []
     if isinstance(data, dict):
-        return ("sites" in data) or ("storeHouse" in data) or ("video" in data)
-    if isinstance(data, list):
-        return len(data) > 0
+        s = data.get("sites")
+        if isinstance(s, list):
+            sites = [x for x in s if isinstance(x, dict)]
+        for key in ("storeHouse", "urls"):
+            v = data.get(key)
+            if isinstance(v, list):
+                for e in v:
+                    if isinstance(e, str):
+                        subs.append(e)
+                    elif isinstance(e, dict):
+                        u = e.get("sourceUrl") or e.get("url")
+                        if isinstance(u, str):
+                            subs.append(u)
+    return sites, subs
+
+
+def norm_api(api):
+    """归一化 api 用于去重：忽略 scheme/query、去尾斜杠、host 小写。"""
+    a = api.split("?")[0].strip().rstrip("/")
+    try:
+        p = urllib.parse.urlsplit(a if "//" in a else "//" + a)
+        return f"{p.netloc.lower()}{p.path}"
+    except Exception:
+        return a.lower()
+
+
+def is_private_host(api):
+    """私网 / 回环地址：别人家内网的媒体库，对你不可达。"""
+    try:
+        host = (urllib.parse.urlsplit(api).hostname or "").lower()
+    except Exception:
+        return True
+    if host in ("localhost", "0.0.0.0", "::1"):
+        return True
+    m = re.match(r"^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$", host)
+    if m:
+        a, b = int(m.group(1)), int(m.group(2))
+        if a in (0, 10, 127):
+            return True
+        if a == 192 and b == 168:
+            return True
+        if a == 172 and 16 <= b <= 31:
+            return True
+        if a == 169 and b == 254:
+            return True
     return False
 
 
-def file_last_commit_date_str(owner, repo, path, token):
-    """返回该文件最近一次 commit 的 ISO 日期字符串，或 None。"""
-    url = (f"{API_BASE}/repos/{owner}/{repo}/commits"
-           f"?path={urllib.parse.quote(path, safe='')}&per_page=1")
-    data = github_api(url, token)
-    if isinstance(data, list) and data:
-        commit = data[0].get("commit", {})
-        return (commit.get("author", {}).get("date")
-                or commit.get("committer", {}).get("date"))
-    return None
+def is_pan(name, api):
+    low_a = (api or "").lower()
+    if any(k in low_a for k in PAN_API_KEYWORDS):
+        return True
+    nm = name or ""
+    if any(k in nm for k in PAN_NAME_KEYWORDS):
+        return True
+    return False
+
+
+def keep_strict(site):
+    """严格闸门：type==1 + 公网 http + 非网盘 + 非成人/违规。"""
+    if site.get("type") != 1:
+        return False
+    api = site.get("api")
+    if not isinstance(api, str) or not api.startswith("http"):
+        return False
+    name = (site.get("name") or "").strip()
+    if is_private_host(api) or is_pan(name, api):
+        return False
+    low = api.lower()
+    if any(k in low for k in BLOCK_API_KEYWORDS):
+        return False
+    if any(k in name for k in BLOCK_NAME_KEYWORDS):
+        return False
+    return True
+
+
+def probe_type1(api):
+    """存活探测：alive / dead / unknown。"""
+    bare = api.split("?")[0]
+    urls = [api] if "?" in api else [bare, bare + "?ac=list&pg=1"]
+    saw_network_err = False
+    for u in urls:
+        text = None
+        try:
+            req = urllib.request.Request(u, headers={"User-Agent": UA, "Accept": "*/*"})
+            with urllib.request.urlopen(req, timeout=PROBE_TIMEOUT) as resp:
+                if resp.status != 200:
+                    return "dead"
+                text = resp.read().decode("utf-8", "ignore")
+        except urllib.error.HTTPError as e:
+            if e.code in (403, 404, 410, 500, 502, 503):
+                return "dead"
+            saw_network_err = True
+            continue
+        except Exception:
+            saw_network_err = True
+            continue
+        d = load_json(text)
+        if isinstance(d, dict) and any(k in d for k in ("list", "class", "code")):
+            return "alive"
+        # 明确返回了内容但不是苹果CMS结构
+        if text and "<html" in text[:2000].lower():
+            return "dead"
+    return "unknown" if saw_network_err else "dead"
+
+
+def github_api(url, token):
+    text = http_get(url, token=token, timeout=20)
+    return load_json(text)
+
+
+def github_raw(url):
+    return "raw.githubusercontent.com" in url
 
 
 def list_json_files(owner, name, path, token, depth=0):
-    """列出某目录下的 JSON 文件（download_url），并下钻 SUBDIRS 一层。"""
     if path:
         url = f"{API_BASE}/repos/{owner}/{name}/contents/{urllib.parse.quote(path, safe='')}"
     else:
@@ -125,118 +294,157 @@ def list_json_files(owner, name, path, token, depth=0):
     out = []
     for it in items:
         if it.get("type") == "file" and str(it.get("name", "")).endswith(".json"):
-            out.append((it.get("name", ""), it.get("download_url")))
+            out.append(it.get("download_url"))
         elif it.get("type") == "dir" and depth < 1 and str(it.get("name", "")) in SUBDIRS:
             out += list_json_files(owner, name, it["name"], token, depth + 1)
     return out
 
 
-def discover_via_search(token):
-    """通过 GitHub 搜索 API 发现近期更新的 tvbox 仓库，枚举其 JSON 候选。"""
-    results = []
+def discover_configs(token, cutoff):
+    """GitHub 搜索 API 发现近期更新的 tvbox 仓库中的 JSON 配置。"""
+    found = []
     url = (f"{API_BASE}/search/repositories?q={urllib.parse.quote(SEARCH_QUERY)}"
            f"&sort=updated&order=desc&per_page={SEARCH_PER_PAGE}")
     data = github_api(url, token)
     if not isinstance(data, dict):
-        return results
+        return found
     for repo in data.get("items", []):
         full = repo.get("full_name", "")
         if full == SELF_REPO:
             continue
+        updated = repo.get("updated_at") or repo.get("pushed_at")
+        if updated:
+            try:
+                d = datetime.fromisoformat(updated.replace("Z", "+00:00"))
+                if d < cutoff:
+                    continue
+            except Exception:
+                pass
         owner, _, name = full.partition("/")
-        for fname, dl in list_json_files(owner, name, "", token):
+        for dl in list_json_files(owner, name, "", token):
             if dl:
-                results.append((full, fname, dl))
-    return results
+                found.append(dl)
+    return found
 
 
-def parse_raw(url):
-    """从 raw.githubusercontent.com URL 解析 (owner, repo, branch, path)。"""
-    m = re.match(r'https?://raw\.githubusercontent\.com/([^/]+)/([^/]+)/([^/]+)/(.+)', url)
-    if not m:
-        return None
-    return m.groups()
+# ============================ 主流程 ============================
+def gather_sites(config_urls):
+    """抓取配置、提取 sites，并递归一层子配置。返回 (raw_sites, meta)。"""
+    raw_sites, seen = [], set()
+    meta = {"parses": [], "rules": [], "flags": [], "doh": [], "lives": []}
+    queue = list(config_urls)
+    fetched = 0
+    while queue and fetched < MAX_CONFIGS:
+        url = queue.pop(0)
+        if not url or url in seen:
+            continue
+        seen.add(url)
+        text = http_get(url, timeout=15)
+        if not text:
+            print(f"[跳过] 不可达 {url}")
+            continue
+        data = load_json(text)
+        if data is None:
+            print(f"[跳过] 非 JSON {url}")
+            continue
+        fetched += 1
+        sites, subs = extract(data)
+        if sites:
+            raw_sites += sites
+            print(f"[配置] sites={len(sites):3d}  {url}")
+            if isinstance(data, dict):
+                for k in meta:
+                    v = data.get(k)
+                    if isinstance(v, list) and v:
+                        meta[k] += v
+        for s in subs[:20]:
+            if s not in seen:
+                queue.append(s)
+    return raw_sites, meta
 
 
-def build_and_write(discovered):
-    """组装最终清单并写出两个 JSON 文件。discovered: list of (name, box_url, dt)。"""
-    # 按新鲜度降序
-    discovered.sort(key=lambda x: x[2], reverse=True)
+def dedupe(lst, keyfn):
+    out, seen = [], set()
+    for x in lst:
+        try:
+            k = keyfn(x)
+        except Exception:
+            continue
+        if k and k not in seen:
+            seen.add(k)
+            out.append(x)
+    return out
 
-    final = []
-    used = set()
-    # 兜底源优先，保证列表永不为空
-    for nm, url in FALLBACK_SOURCES:
-        if url not in used:
-            final.append({"sourceName": nm, "sourceUrl": url})
-            used.add(url)
-    room = MAX_SOURCES - len(final)
-    for nm, url, _ in discovered[:room]:
-        if url not in used:
-            final.append({"sourceName": nm, "sourceUrl": url})
-            used.add(url)
 
-    # 影视仓：storeHouse 格式
-    store = {"storeHouse": final}
-    # 原版 TVBox：顶层数组 + 直播
-    arr = [{"name": e["sourceName"], "url": e["sourceUrl"], "type": 0} for e in final]
-    arr += [{"name": nm, "url": wrap_for_box(url), "type": 1} for nm, url in LIVE_SOURCES]
+def build_clean(strict_sites, meta):
+    sites = []
+    for i, s in enumerate(strict_sites):
+        api = s["api"].split("?")[0].strip()      # 去掉上游自带的 ?ac=list 等，交给盒子自行拼接
+        try:
+            host = urllib.parse.urlsplit(api).netloc.lower()
+        except Exception:
+            host = f"site{i}"
+        key = re.sub(r"[^0-9a-zA-Z]", "_", host) or f"site{i}"
+        sites.append(OrderedDict([
+            ("key", key),
+            ("name", (s.get("name") or host).strip()),
+            ("type", 1),
+            ("api", api),
+            ("searchable", 1),
+            ("quickSearch", 1),
+            ("filterable", 1),
+        ]))
+    # key 去重
+    seen_key = set()
+    for s in sites:
+        while s["key"] in seen_key:
+            s["key"] += "_"
+        seen_key.add(s["key"])
 
+    clean = OrderedDict()
+    clean["sites"] = sites
+    if meta.get("lives"):
+        clean["lives"] = dedupe(meta["lives"], lambda x: json.dumps(x, sort_keys=True, ensure_ascii=False))
+    if meta.get("parses"):
+        clean["parses"] = dedupe(meta["parses"], lambda x: json.dumps(x, sort_keys=True, ensure_ascii=False))[:50]
+    if meta.get("rules"):
+        clean["rules"] = dedupe(meta["rules"], lambda x: json.dumps(x, sort_keys=True, ensure_ascii=False))[:30]
+    if meta.get("flags"):
+        clean["flags"] = sorted({f for f in meta["flags"] if isinstance(f, str)})
+    if meta.get("doh"):
+        clean["doh"] = dedupe(meta["doh"], lambda x: json.dumps(x, sort_keys=True, ensure_ascii=False))[:10]
+    clean["wallpaper"] = "https://bing.img.run/1920x1080.php"
+    clean["warningText"] = "本配置仅聚合公开采集接口，仅供个人学习体验，请遵守当地法律法规。"
+    return clean
+
+
+def write_outputs(clean, sites_count):
     out_dir = os.path.dirname(os.path.abspath(__file__))
+    repo = os.environ.get("GITHUB_REPOSITORY") or SELF_REPO
+    branch = os.environ.get("GITHUB_REF_NAME") or "main"
+    raw = f"https://raw.githubusercontent.com/{repo}/{branch}/tvbox_clean.json"
+
+    mirrors = [
+        ("纯净直连·主(ghproxy)", GH_PROXY + raw),
+        ("纯净直连·备1(ghfast)", GH_PROXY2 + raw),
+        ("纯净直连·备2(jsDelivr)", f"https://cdn.jsdelivr.net/gh/{repo}@{branch}/tvbox_clean.json"),
+    ]
+    store = {"storeHouse": [{"sourceName": nm, "sourceUrl": u} for nm, u in mirrors]}
+    arr = [{"name": nm, "url": u, "type": 0} for nm, u in mirrors]
+    arr += [{"name": "国内直播IPTV", "url": "https://ghproxy.net/https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/IPTV.m3u", "type": 1},
+            {"name": "国际直播", "url": "https://ghproxy.net/https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Global.m3u", "type": 1}]
+
+    with open(os.path.join(out_dir, "tvbox_clean.json"), "w", encoding="utf-8") as f:
+        json.dump(clean, f, ensure_ascii=False, indent=2)
     with open(os.path.join(out_dir, "tvbox_storehouse.json"), "w", encoding="utf-8") as f:
         json.dump(store, f, ensure_ascii=False, indent=2)
     with open(os.path.join(out_dir, "tvbox.json"), "w", encoding="utf-8") as f:
         json.dump(arr, f, ensure_ascii=False, indent=2)
-
-    print(f"\n生成完成：兜底 {len(FALLBACK_SOURCES)} + 自动发现 {len(discovered[:room])} "
-          f"= 共 {len(final)} 个仓库（新鲜度 ≤ {MAX_AGE_DAYS} 天）")
-
-
-def discover_sources(token, cutoff):
-    """执行发现流程，返回 list of (name, box_url, dt)。任何单条异常都被吞掉。"""
-    discovered = []
-    seen = set()
-    try:
-        candidates = discover_via_search(token)
-    except Exception as e:
-        print(f"[警告] 搜索发现异常: {e}")
-        candidates = []
-
-    for full, fname, raw in candidates[:MAX_CANDIDATES]:
-        try:
-            if raw in seen:
-                continue
-            seen.add(raw)
-            parsed = parse_raw(raw)
-            if not parsed:
-                continue
-            owner, repo, branch, path = parsed
-            date_str = file_last_commit_date_str(owner, repo, path, token)
-            if not date_str:
-                print(f"[跳过] 无法确定更新时间: {raw}")
-                continue
-            try:
-                d = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-            except Exception:
-                print(f"[跳过] 日期解析失败: {date_str}")
-                continue
-            if d < cutoff or d.year < 2026:
-                print(f"[跳过] 过期({d.date()}): {full}/{fname}")
-                continue
-            text = http_get(raw, token=token, timeout=15)
-            if not text or not validate_single_warehouse(text):
-                print(f"[跳过] 非合法单仓配置: {full}/{fname}")
-                continue
-            discovered.append((f"{repo}/{fname}", wrap_for_box(raw), d))
-            print(f"[纳入] {repo}/{fname} ({d.date()})")
-        except Exception as e:
-            print(f"[警告] 候选处理异常，跳过 {full}/{fname}: {e}")
-            continue
-    return discovered
+    print(f"\n生成完成：干净直连源 {sites_count} 个 → tvbox_clean.json / tvbox_storehouse.json / tvbox.json")
+    print(f"订阅地址(主)：{GH_PROXY + raw}")
 
 
 def main():
-    # 强制 UTF-8 输出，避免 CI 非 UTF-8 locale 下打印中文崩溃
     try:
         sys.stdout.reconfigure(encoding="utf-8")
         sys.stderr.reconfigure(encoding="utf-8")
@@ -244,29 +452,85 @@ def main():
         pass
 
     token = os.environ.get("GITHUB_TOKEN")
-    print(f"[info] token={'已注入' if token else '未注入(仅输出兜底源)'} "
-          f"python={sys.version.split()[0]}")
     cutoff = cutoff_dt()
+    print(f"[info] token={'已注入' if token else '未注入'} python={sys.version.split()[0]} "
+          f"模式=严格(仅type1·全删网盘)")
 
-    # 发现阶段整体容错：即便完全失败，也至少输出兜底源
+    configs = list(KNOWN_CONFIGS)
     try:
-        discovered = discover_sources(token, cutoff)
+        extra = discover_configs(token, cutoff)
+        print(f"[发现] GitHub 搜索得到 {len(extra)} 个候选配置")
+        configs += extra
+    except Exception as e:
+        print(f"[警告] 搜索发现异常: {e}")
+
+    raw_sites, meta = [], {}
+    try:
+        raw_sites, meta = gather_sites(configs)
     except Exception:
         traceback.print_exc()
-        print("[警告] 发现阶段整体异常，仅输出兜底源")
-        discovered = []
+        print("[警告] 抓取阶段异常，仅使用内置种子源")
 
-    build_and_write(discovered)
+    # 严格过滤
+    strict, dropped_pan, dropped_type = [], 0, 0
+    for s in raw_sites:
+        if s.get("type") != 1:
+            dropped_type += 1
+            continue
+        if not keep_strict(s):
+            if isinstance(s.get("api"), str) and s["api"].startswith("http"):
+                dropped_pan += 1
+            continue
+        strict.append(s)
+    print(f"[过滤] 原始 {len(raw_sites)} → 非type1剔除 {dropped_type} · 网盘/异常剔除 {dropped_pan} "
+          f"→ type1 剩 {len(strict)}")
+
+    # 去重
+    strict = dedupe(strict, lambda s: norm_api(s["api"]))
+    print(f"[去重] 唯一 type1 源 {len(strict)}")
+
+    # 存活探测（并发）
+    results = {}
+    targets = strict[:MAX_SITES]
+    with ThreadPoolExecutor(max_workers=PROBE_WORKERS) as ex:
+        futs = {ex.submit(probe_type1, s["api"]): s for s in targets}
+        for fu in as_completed(futs):
+            s = futs[fu]
+            try:
+                results[norm_api(s["api"])] = fu.result()
+            except Exception:
+                results[norm_api(s["api"])] = "unknown"
+
+    kept, dead = [], 0
+    for s in targets:
+        st = results.get(norm_api(s["api"]), "unknown")
+        if st == "dead":
+            dead += 1
+            continue                     # 仅剔除“明确已死”的
+        kept.append(s)                   # alive / unknown 均保留
+    print(f"[探测] 保留 {len(kept)}（其中明确死亡剔除 {dead}）")
+
+    # 合并内置种子源（永远可用）
+    existing = {norm_api(s["api"]) for s in kept}
+    for nm, api in SEED_SITES:
+        if norm_api(api) not in existing:
+            kept.append({"name": nm, "type": 1, "api": api})
+            existing.add(norm_api(api))
+
+    if not kept:  # 极端兜底
+        kept = [{"name": nm, "type": 1, "api": api} for nm, api in SEED_SITES]
+
+    seed_apis = {norm_api(a) for _, a in SEED_SITES}
+    kept.sort(key=lambda s: (0 if norm_api(s["api"]) in seed_apis else 1, (s.get("name") or "")))
+    clean = build_clean(kept, meta or {})
+    write_outputs(clean, len(clean["sites"]))
+    for s in clean["sites"]:
+        print(f"   · {s['name']}  ->  {s['api']}")
 
 
 if __name__ == "__main__":
     try:
         main()
     except Exception:
-        # 打印完整堆栈便于排查，但仍写出兜底源、并以 0 退出避免 CI 报红
         traceback.print_exc()
-        try:
-            build_and_write([])
-        except Exception:
-            pass
     sys.exit(0)
