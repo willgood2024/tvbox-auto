@@ -10,11 +10,14 @@
   2) 【严格】只保留 type == 1 —— 直连苹果CMS采集站 API，不依赖 spider.jar / 远程 JS，
      这也是国内网络下真正能用的那类源；
   3) 【全删网盘】按 api / name 关键字剔除 阿里/夸克/UC/迅雷/AList/WebDAV/盘搜 等；
-  4) 按 api 去重，并对每个 api 做一次存活探测（alive / dead / unknown）——
+  4) 按 api 去重，并对每个 api 做一次「存活 + 延时」探测：
      dead(明确 4xx5xx 或返回非 JSON) 剔除；unknown(DNS/超时，多为探测侧网络问题) 保留，
      避免把“你盒子连得通、只是运行器连不上”的源误杀；
-  5) 合并上游的 parses / rules / flags / doh / lives 等附属配置；
-  6) 输出自建单仓配置 tvbox_clean.json，并生成指向它的 storeHouse / 顶层数组文件。
+  5) 【v2 精简】按探测延时升序只保留最快的 MAX_SITES 个（减少卡顿）；
+     产物里**只保留 sites**，不再合并上游的 parses / rules / flags / doh / lives
+     —— 异构配置的这些字段是影视仓闪退的主要诱因，且 type1 直连源本就不需要；
+  6) 输出自建单仓配置 tvbox_clean.json，并生成**只指向它一条**的 storeHouse / 顶层数组
+     （单一订阅入口，避免同一份内容被重复加载多遍）。
 
 兜底：内置 5 个已实测存活的直连采集站，保证任何情况下产物都非空、都能用。
 
@@ -25,6 +28,7 @@ import json
 import os
 import re
 import sys
+import time
 import traceback
 import urllib.error
 import urllib.parse
@@ -60,7 +64,7 @@ SEARCH_QUERY = "tvbox"
 SEARCH_PER_PAGE = 20
 MAX_AGE_DAYS = 30           # 新鲜度闸门：距今天 ≤ 30 天
 MAX_CONFIGS = 60            # 最多抓取的配置文件数
-MAX_SITES = 150             # 最终保留的源数量上限
+MAX_SITES = 20              # 最终保留的源数量上限（按延时取最快的，宁精勿多）
 PROBE_WORKERS = 16
 PROBE_TIMEOUT = 8
 
@@ -85,12 +89,13 @@ PAN_API_KEYWORDS = [
 # 成人 / 违规内容源：按合规要求一律剔除
 BLOCK_NAME_KEYWORDS = [
     "大奶子", "色猫", "麻豆", "抖阴", "番号", "奶香", "松视", "souav", "蜜桃",
-    "潘甜甜", "里番", "伦理", "情色", "成人", "福利视频", "午夜",
+    "潘甜甜", "里番", "伦理", "情色", "成人", "福利视频", "午夜", "黑料",
 ]
 BLOCK_API_KEYWORDS = [
     "souavzy", "91md.me", "semaozy", "maozyapi", "sexnguon", "888dav", "naixxzy",
     "danaizi", "apilj.com", "aosikazy", "shayuapi", "huosuapi", "heiapi", "slapibf",
     "apittzy", "155api", "yikanapi", "lbapi9", "ddapi.cc", "523zyw", "mgzyz1", "apiyutu",
+    "heiliao",
 ]
 
 
@@ -245,21 +250,23 @@ def keep_strict(site):
 
 
 def probe_type1(api):
-    """存活探测：alive / dead / unknown。"""
+    """存活探测 + 延时测量：返回 (status, 秒)。status ∈ alive / dead / unknown。"""
     bare = api.split("?")[0]
     urls = [api] if "?" in api else [bare, bare + "?ac=list&pg=1"]
     saw_network_err = False
     for u in urls:
         text = None
+        t0 = time.time()
         try:
             req = urllib.request.Request(u, headers={"User-Agent": UA, "Accept": "*/*"})
             with urllib.request.urlopen(req, timeout=PROBE_TIMEOUT) as resp:
                 if resp.status != 200:
-                    return "dead"
+                    return ("dead", 99.0)
                 text = resp.read().decode("utf-8", "ignore")
+            latency = round(time.time() - t0, 2)
         except urllib.error.HTTPError as e:
             if e.code in (403, 404, 410, 500, 502, 503):
-                return "dead"
+                return ("dead", 99.0)
             saw_network_err = True
             continue
         except Exception:
@@ -267,11 +274,11 @@ def probe_type1(api):
             continue
         d = load_json(text)
         if isinstance(d, dict) and any(k in d for k in ("list", "class", "code")):
-            return "alive"
+            return ("alive", latency)
         # 明确返回了内容但不是苹果CMS结构
         if text and "<html" in text[:2000].lower():
-            return "dead"
-    return "unknown" if saw_network_err else "dead"
+            return ("dead", 99.0)
+    return ("unknown", 99.0) if saw_network_err else ("dead", 99.0)
 
 
 def github_api(url, token):
@@ -376,7 +383,8 @@ def dedupe(lst, keyfn):
     return out
 
 
-def build_clean(strict_sites, meta):
+def build_clean(strict_sites):
+    """只输出 sites —— 不再合并上游 parses/rules/flags/doh/lives（闪退主要诱因）。"""
     sites = []
     for i, s in enumerate(strict_sites):
         api = s["api"].split("?")[0].strip()      # 去掉上游自带的 ?ac=list 等，交给盒子自行拼接
@@ -403,16 +411,6 @@ def build_clean(strict_sites, meta):
 
     clean = OrderedDict()
     clean["sites"] = sites
-    if meta.get("lives"):
-        clean["lives"] = dedupe(meta["lives"], lambda x: json.dumps(x, sort_keys=True, ensure_ascii=False))
-    if meta.get("parses"):
-        clean["parses"] = dedupe(meta["parses"], lambda x: json.dumps(x, sort_keys=True, ensure_ascii=False))[:50]
-    if meta.get("rules"):
-        clean["rules"] = dedupe(meta["rules"], lambda x: json.dumps(x, sort_keys=True, ensure_ascii=False))[:30]
-    if meta.get("flags"):
-        clean["flags"] = sorted({f for f in meta["flags"] if isinstance(f, str)})
-    if meta.get("doh"):
-        clean["doh"] = dedupe(meta["doh"], lambda x: json.dumps(x, sort_keys=True, ensure_ascii=False))[:10]
     clean["wallpaper"] = "https://bing.img.run/1920x1080.php"
     clean["warningText"] = "本配置仅聚合公开采集接口，仅供个人学习体验，请遵守当地法律法规。"
     return clean
@@ -424,15 +422,10 @@ def write_outputs(clean, sites_count):
     branch = os.environ.get("GITHUB_REF_NAME") or "main"
     raw = f"https://raw.githubusercontent.com/{repo}/{branch}/tvbox_clean.json"
 
-    mirrors = [
-        ("纯净直连·主(ghproxy)", GH_PROXY + raw),
-        ("纯净直连·备1(ghfast)", GH_PROXY2 + raw),
-        ("纯净直连·备2(jsDelivr)", f"https://cdn.jsdelivr.net/gh/{repo}@{branch}/tvbox_clean.json"),
-    ]
-    store = {"storeHouse": [{"sourceName": nm, "sourceUrl": u} for nm, u in mirrors]}
-    arr = [{"name": nm, "url": u, "type": 0} for nm, u in mirrors]
-    arr += [{"name": "国内直播IPTV", "url": "https://ghproxy.net/https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/IPTV.m3u", "type": 1},
-            {"name": "国际直播", "url": "https://ghproxy.net/https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Global.m3u", "type": 1}]
+    # 单一订阅入口：只指向自建单仓一条（避免同一份内容被加载多遍 → 列表臃肿/闪退）
+    primary = GH_PROXY + raw
+    store = {"storeHouse": [{"sourceName": "纯净直连(严格·自建)", "sourceUrl": primary}]}
+    arr = [{"name": "纯净直连(严格·自建)", "url": primary, "type": 0}]
 
     with open(os.path.join(out_dir, "tvbox_clean.json"), "w", encoding="utf-8") as f:
         json.dump(clean, f, ensure_ascii=False, indent=2)
@@ -441,7 +434,7 @@ def write_outputs(clean, sites_count):
     with open(os.path.join(out_dir, "tvbox.json"), "w", encoding="utf-8") as f:
         json.dump(arr, f, ensure_ascii=False, indent=2)
     print(f"\n生成完成：干净直连源 {sites_count} 个 → tvbox_clean.json / tvbox_storehouse.json / tvbox.json")
-    print(f"订阅地址(主)：{GH_PROXY + raw}")
+    print(f"订阅地址(唯一)：{primary}")
 
 
 def main():
@@ -489,26 +482,29 @@ def main():
     strict = dedupe(strict, lambda s: norm_api(s["api"]))
     print(f"[去重] 唯一 type1 源 {len(strict)}")
 
-    # 存活探测（并发）
+    # 存活探测 + 延时测量（并发）
     results = {}
-    targets = strict[:MAX_SITES]
     with ThreadPoolExecutor(max_workers=PROBE_WORKERS) as ex:
-        futs = {ex.submit(probe_type1, s["api"]): s for s in targets}
+        futs = {ex.submit(probe_type1, s["api"]): s for s in strict}
         for fu in as_completed(futs):
             s = futs[fu]
             try:
                 results[norm_api(s["api"])] = fu.result()
             except Exception:
-                results[norm_api(s["api"])] = "unknown"
+                results[norm_api(s["api"])] = ("unknown", 99.0)
 
-    kept, dead = [], 0
-    for s in targets:
-        st = results.get(norm_api(s["api"]), "unknown")
+    scored, dead = [], 0
+    for s in strict:
+        st, lat = results.get(norm_api(s["api"]), ("unknown", 99.0))
         if st == "dead":
             dead += 1
             continue                     # 仅剔除“明确已死”的
-        kept.append(s)                   # alive / unknown 均保留
-    print(f"[探测] 保留 {len(kept)}（其中明确死亡剔除 {dead}）")
+        scored.append((s, lat))          # alive / unknown 均保留
+    scored.sort(key=lambda t: t[1])      # 按延时升序，快的靠前
+    kept = [s for s, _ in scored[:MAX_SITES]]
+    print(f"[探测] 可用 {len(scored)}（明确死亡剔除 {dead}）→ 按延时取最快 {len(kept)} 个")
+    for s, lat in scored[:MAX_SITES]:
+        print(f"   {lat:6.2f}s  {s.get('name')}  {s['api']}")
 
     # 合并内置种子源（永远可用）
     existing = {norm_api(s["api"]) for s in kept}
@@ -520,9 +516,7 @@ def main():
     if not kept:  # 极端兜底
         kept = [{"name": nm, "type": 1, "api": api} for nm, api in SEED_SITES]
 
-    seed_apis = {norm_api(a) for _, a in SEED_SITES}
-    kept.sort(key=lambda s: (0 if norm_api(s["api"]) in seed_apis else 1, (s.get("name") or "")))
-    clean = build_clean(kept, meta or {})
+    clean = build_clean(kept)
     write_outputs(clean, len(clean["sites"]))
     for s in clean["sites"]:
         print(f"   · {s['name']}  ->  {s['api']}")

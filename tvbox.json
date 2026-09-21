@@ -1,27 +1,7 @@
 [
   {
-    "name": "纯净直连·主(ghproxy)",
+    "name": "纯净直连(严格·自建)",
     "url": "https://ghproxy.net/https://raw.githubusercontent.com/willgood2024/tvbox-auto/main/tvbox_clean.json",
     "type": 0
-  },
-  {
-    "name": "纯净直连·备1(ghfast)",
-    "url": "https://ghfast.top/https://raw.githubusercontent.com/willgood2024/tvbox-auto/main/tvbox_clean.json",
-    "type": 0
-  },
-  {
-    "name": "纯净直连·备2(jsDelivr)",
-    "url": "https://cdn.jsdelivr.net/gh/willgood2024/tvbox-auto@main/tvbox_clean.json",
-    "type": 0
-  },
-  {
-    "name": "国内直播IPTV",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/IPTV.m3u",
-    "type": 1
-  },
-  {
-    "name": "国际直播",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/YueChan/Live/refs/heads/main/Global.m3u",
-    "type": 1
   }
 ]

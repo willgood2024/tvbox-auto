@@ -1,16 +1,8 @@
 {
   "storeHouse": [
     {
-      "sourceName": "纯净直连·主(ghproxy)",
+      "sourceName": "纯净直连(严格·自建)",
       "sourceUrl": "https://ghproxy.net/https://raw.githubusercontent.com/willgood2024/tvbox-auto/main/tvbox_clean.json"
-    },
-    {
-      "sourceName": "纯净直连·备1(ghfast)",
-      "sourceUrl": "https://ghfast.top/https://raw.githubusercontent.com/willgood2024/tvbox-auto/main/tvbox_clean.json"
-    },
-    {
-      "sourceName": "纯净直连·备2(jsDelivr)",
-      "sourceUrl": "https://cdn.jsdelivr.net/gh/willgood2024/tvbox-auto@main/tvbox_clean.json"
     }
   ]
 }
