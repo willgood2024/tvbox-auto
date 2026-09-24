@@ -2,7 +2,7 @@
   "sites": [
     {
       "key": "madouse_la",
-      "name": "★魔法(直连)｜2378KB/s",
+      "name": "★魔法(直连)｜1785KB/s",
       "type": 1,
       "api": "http://madouse.la/api.php/provide/vod/",
       "searchable": 1,
@@ -10,44 +10,35 @@
       "filterable": 0
     },
     {
-      "key": "caiji_moduapi_cc",
-      "name": "魔都|点播｜700KB/s",
-      "type": 1,
-      "api": "https://caiji.moduapi.cc/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "www_mdzyapi_com",
-      "name": "🥬魔都资源｜552KB/s",
-      "type": 1,
-      "api": "https://www.mdzyapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "jkunzyapi_com",
-      "name": "💕jkun(直连)｜478KB/s",
-      "type": 1,
-      "api": "https://jkunzyapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
       "key": "ckzy_me",
-      "name": "韩国伦li｜478KB/s",
+      "name": "CK资源｜1649KB/s",
       "type": 1,
-      "api": "https://ckzy.me/api.php/provide/vod/",
+      "api": "https://ckzy.me/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "www_hongniuzy2_com",
+      "name": "🥬红牛资源｜1488KB/s",
+      "type": 1,
+      "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "www_hongniuzy3_com",
+      "name": "26-红牛｜1222KB/s",
+      "type": 1,
+      "api": "https://www.hongniuzy3.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
       "key": "ikunzyapi_com",
-      "name": "ikun | 采集｜453KB/s",
+      "name": "ikun | 采集｜997KB/s",
       "type": 1,
       "api": "https://ikunzyapi.com/api.php/provide/vod/",
       "searchable": 1,
@@ -55,17 +46,17 @@
       "filterable": 0
     },
     {
-      "key": "hhzyapi_com",
-      "name": "🦊火狐采集｜409KB/s",
+      "key": "jkunzyapi_com",
+      "name": "鸡坤 | 采集｜919KB/s",
       "type": 1,
-      "api": "https://hhzyapi.com/api.php/provide/vod/",
+      "api": "https://jkunzyapi.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
       "key": "ikunzyapi_com_",
-      "name": "IK｜402KB/s",
+      "name": "IK｜846KB/s",
       "type": 1,
       "api": "https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/",
       "searchable": 1,
@@ -73,64 +64,46 @@
       "filterable": 0
     },
     {
-      "key": "m3u8_apiyhzy_com",
-      "name": "樱花采集｜305KB/s",
+      "key": "suoniapi_com",
+      "name": "索尼┃资源｜待测",
       "type": 1,
-      "api": "https://m3u8.apiyhzy.com/api.php/provide/vod/",
+      "api": "https://suoniapi.com/api.php/provide/vod/from/snm3u8/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
-      "key": "fhapi9_com",
-      "name": "★废柴(直连)｜305KB/s",
+      "key": "ffzy4_tv",
+      "name": "7-非凡｜待测",
       "type": 1,
-      "api": "http://fhapi9.com/api.php/provide/vod/",
+      "api": "http://ffzy4.tv/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
-      "key": "www_jingpinx_com",
-      "name": "★精品下(直连)｜97KB/s",
+      "key": "ffzy5_tv",
+      "name": "13-非凡｜待测",
       "type": 1,
-      "api": "http://www.jingpinx.com/api.php/provide/vod/",
+      "api": "http://ffzy5.tv/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
-      "key": "thzy1_me",
-      "name": "桃花｜80KB/s",
+      "key": "ffzy1_tv",
+      "name": "🥗┃非凡┃资源｜待测",
       "type": 1,
-      "api": "https://thzy1.me/api.php/provide/vod/",
+      "api": "http://ffzy1.tv/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
-      "key": "jszyapi_com",
-      "name": "极速┃采集影视｜待测",
+      "key": "api_zuidapi_com",
+      "name": "🥬最大资源｜待测",
       "type": 1,
-      "api": "https://jszyapi.com/api.php/provide/vod/at/json",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "jszyapi_com_",
-      "name": "影视 • 极速[直连]｜待测",
-      "type": 1,
-      "api": "https://jszyapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "www_huyaapi_com",
-      "name": "虎牙|点播｜待测",
-      "type": 1,
-      "api": "https://www.huyaapi.com/api.php/provide/vod/",
+      "api": "https://api.zuidapi.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
@@ -145,6 +118,51 @@
       "filterable": 0
     },
     {
+      "key": "api_ukuapi88_com",
+      "name": "38-U酷｜待测",
+      "type": 1,
+      "api": "https://api.ukuapi88.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "ffzy_tv",
+      "name": "非凡2｜待测",
+      "type": 1,
+      "api": "https://ffzy.tv/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "jszyapi_com",
+      "name": "极速┃采集影视｜待测",
+      "type": 1,
+      "api": "https://jszyapi.com/api.php/provide/vod/at/json",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "api_wujinapi_com",
+      "name": "30-无尽｜待测",
+      "type": 1,
+      "api": "https://api.wujinapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "vnzyz_com",
+      "name": "💕越南(直连)｜待测",
+      "type": 1,
+      "api": "https://vnzyz.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
       "key": "tyyszy_com",
       "name": "影视 • 天涯｜待测",
       "type": 1,
@@ -154,28 +172,10 @@
       "filterable": 0
     },
     {
-      "key": "jyzyapi_com",
-      "name": "金鹰 | 采集｜待测",
+      "key": "sdzyapi_com",
+      "name": "闪电┃采集影视｜待测",
       "type": 1,
-      "api": "https://jyzyapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "www_huyaapi_com_",
-      "name": "🐯虎牙采集｜待测",
-      "type": 1,
-      "api": "https://www.huyaapi.com/api.php/provide/vod/from/hym3u8",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "suoniapi_com",
-      "name": "索尼┃采集｜待测",
-      "type": 1,
-      "api": "https://suoniapi.com/api.php/provide/vod",
+      "api": "http://sdzyapi.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
@@ -194,6 +194,15 @@
       "name": "暴风采集｜待测",
       "type": 1,
       "api": "https://bfzyapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "suoniapi_com_",
+      "name": "索尼采集｜待测",
+      "type": 1,
+      "api": "https://suoniapi.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
