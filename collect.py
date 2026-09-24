@@ -10,14 +10,21 @@
   2) 【严格】只保留 type == 1 —— 直连苹果CMS采集站 API，不依赖 spider.jar / 远程 JS，
      这也是国内网络下真正能用的那类源；
   3) 【全删网盘】按 api / name 关键字剔除 阿里/夸克/UC/迅雷/AList/WebDAV/盘搜 等；
+     【违规源】name / api / 上游 URL 三层黑名单（含 草榴/色戒/lsb/adult 等），
+     并整段跳过曾带入违规内容的仓库（如 hebijunge/tvbox-config）；
   4) 按 api 去重，并对每个 api 做一次「存活 + 延时」探测：
      dead(明确 4xx5xx 或返回非 JSON) 剔除；unknown(DNS/超时，多为探测侧网络问题) 保留，
      避免把“你盒子连得通、只是运行器连不上”的源误杀；
-  5) 【v2 精简】按探测延时升序只保留最快的 MAX_SITES 个（减少卡顿）；
-     产物里**只保留 sites**，不再合并上游的 parses / rules / flags / doh / lives
+  5) 【v3 真实测速】两轮筛选：
+     ① 接口延时粗筛 → 取前 DEEP_CANDIDATES 个；
+     ② 真实取流测速（详情 → 首个 m3u8 → 首个分片，测吞吐 KB/s）→ 按吞吐降序取 MAX_SITES；
+     站点名里追加的是**我们实测**的吞吐，并剥掉上游自带的 [xxms|yy] 假标注
+     （那些是别人的测量、且测的是接口而非播放，容易误导）。
+  6) 【低并发】searchable=1 / quickSearch=0 / filterable=0 —— 避免搜索与筛选时
+     对所有站点并发请求、与正在播放的视频抢带宽（卡顿的常见放大器）。
+  7) 产物**只保留 sites**，不再合并上游的 parses/rules/flags/doh/lives
      —— 异构配置的这些字段是影视仓闪退的主要诱因，且 type1 直连源本就不需要；
-  6) 输出自建单仓配置 tvbox_clean.json，并生成**只指向它一条**的 storeHouse / 顶层数组
-     （单一订阅入口，避免同一份内容被重复加载多遍）。
+     并生成**只指向它一条**的 storeHouse / 顶层数组（单一订阅入口，避免重复加载多遍）。
 
 兜底：内置 5 个已实测存活的直连采集站，保证任何情况下产物都非空、都能用。
 
@@ -67,6 +74,9 @@ MAX_CONFIGS = 60            # 最多抓取的配置文件数
 MAX_SITES = 20              # 最终保留的源数量上限（按延时取最快的，宁精勿多）
 PROBE_WORKERS = 16
 PROBE_TIMEOUT = 8
+DEEP_CANDIDATES = 40        # 接口延时粗筛后，进入"真实取流测速"的候选数
+SEG_BYTES = 262144          # 测速时读取首个分片的前 256KB
+SEG_TIMEOUT = 6             # 分片测速超时（秒）
 
 GH_PROXY = "https://ghproxy.net/"          # 主镜像（实时代理，无缓存）
 GH_PROXY2 = "https://ghfast.top/"          # 备用镜像
@@ -90,13 +100,17 @@ PAN_API_KEYWORDS = [
 BLOCK_NAME_KEYWORDS = [
     "大奶子", "色猫", "麻豆", "抖阴", "番号", "奶香", "松视", "souav", "蜜桃",
     "潘甜甜", "里番", "伦理", "情色", "成人", "福利视频", "午夜", "黑料",
+    "草榴", "色戒", "lsb", "(18)", "18+", "adult",
 ]
 BLOCK_API_KEYWORDS = [
     "souavzy", "91md.me", "semaozy", "maozyapi", "sexnguon", "888dav", "naixxzy",
     "danaizi", "apilj.com", "aosikazy", "shayuapi", "huosuapi", "heiapi", "slapibf",
     "apittzy", "155api", "yikanapi", "lbapi9", "ddapi.cc", "523zyw", "mgzyz1", "apiyutu",
-    "heiliao",
+    "heiliao", "apilsbzy", "subocaiji", "adult",
 ]
+
+# 整段跳过的上游（曾带入违规内容）：命中即不抓取
+BLOCK_URL_KEYWORDS = ["hebijunge/tvbox-config", "adult"]
 
 
 # ============================ 工具 ============================
@@ -281,6 +295,75 @@ def probe_type1(api):
     return ("unknown", 99.0) if saw_network_err else ("dead", 99.0)
 
 
+def _first_uri(playlist_text):
+    """取 m3u8 文本里的第一条非注释行（可能是变体 playlist，也可能是分片）。"""
+    for line in (playlist_text or "").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#"):
+            return line
+    return None
+
+
+def _first_m3u8(detail_json):
+    """从苹果CMS详情里取第一条 http(s) 的 m3u8 播放地址。"""
+    if not isinstance(detail_json, dict):
+        return None
+    for it in detail_json.get("list", []) or []:
+        pu = str(it.get("vod_play_url") or "")
+        for part in pu.split("#"):
+            u = part.split("$")[-1].strip()
+            if u.startswith("http") and ".m3u8" in u.lower():
+                return u
+    return None
+
+
+def probe_play(api, timeout=PROBE_TIMEOUT):
+    """真实取流测速：详情 → 首个 m3u8 → 首个分片，实测吞吐。
+    返回 (ok: bool, kbps: float, note: str)。"""
+    base = api.split("?")[0].rstrip("/")
+
+    # 1) 详情：拿到真实播放地址（兼容 ac=detail / ac=videolist 两种写法）
+    detail = None
+    for q in ("?ac=detail&pg=1", "?ac=videolist&pg=1"):
+        detail = load_json(http_get(base + q, timeout=timeout) or "")
+        if _first_m3u8(detail):
+            break
+    m3u8 = _first_m3u8(detail)
+    if not m3u8:
+        return (False, 0.0, "无直链m3u8")
+
+    # 2) m3u8（可能是主 playlist，指向变体 playlist）
+    text = http_get(m3u8, timeout=timeout)
+    if not text:
+        return (False, 0.0, "m3u8不可达")
+    seg = _first_uri(text)
+    if not seg:
+        return (False, 0.0, "playlist为空")
+    seg = urllib.parse.urljoin(m3u8, seg)
+
+    # 主 playlist → 变体 playlist：再下钻一层
+    if seg.lower().endswith(".m3u8") or ".m3u8?" in seg.lower():
+        sub = http_get(seg, timeout=timeout)
+        nxt = _first_uri(sub) if sub else None
+        if not nxt:
+            return (False, 0.0, "变体playlist不可达")
+        seg = urllib.parse.urljoin(seg, nxt)
+
+    # 3) 分片：Range 取前 SEG_BYTES 字节，实测吞吐
+    t0 = time.time()
+    try:
+        req = urllib.request.Request(
+            seg, headers={"User-Agent": UA, "Range": f"bytes=0-{SEG_BYTES - 1}"})
+        with urllib.request.urlopen(req, timeout=SEG_TIMEOUT) as resp:
+            chunk = resp.read(SEG_BYTES)
+        dt = max(time.time() - t0, 1e-6)
+        if not chunk:
+            return (False, 0.0, "分片为空")
+        return (True, round(len(chunk) / 1024 / dt, 1), f"{len(chunk) // 1024}KB/{dt:.1f}s")
+    except Exception as e:
+        return (False, 0.0, f"分片失败:{str(e)[:20]}")
+
+
 def github_api(url, token):
     text = http_get(url, token=token, timeout=20)
     return load_json(text)
@@ -346,6 +429,9 @@ def gather_sites(config_urls):
         if not url or url in seen:
             continue
         seen.add(url)
+        if any(k in url.lower() for k in BLOCK_URL_KEYWORDS):
+            print(f"[跳过] 命中屏蔽名单 {url}")
+            continue
         text = http_get(url, timeout=15)
         if not text:
             print(f"[跳过] 不可达 {url}")
@@ -399,8 +485,8 @@ def build_clean(strict_sites):
             ("type", 1),
             ("api", api),
             ("searchable", 1),
-            ("quickSearch", 1),
-            ("filterable", 1),
+            ("quickSearch", 0),     # 低并发：不在输入时对全部站点并发请求（避免与播放抢带宽）
+            ("filterable", 0),      # 低并发：不在切换分类时对全部站点并发拉取
         ]))
     # key 去重
     seen_key = set()
@@ -482,7 +568,7 @@ def main():
     strict = dedupe(strict, lambda s: norm_api(s["api"]))
     print(f"[去重] 唯一 type1 源 {len(strict)}")
 
-    # 存活探测 + 延时测量（并发）
+    # ---------- 第一轮：接口存活 + 延时粗筛 ----------
     results = {}
     with ThreadPoolExecutor(max_workers=PROBE_WORKERS) as ex:
         futs = {ex.submit(probe_type1, s["api"]): s for s in strict}
@@ -500,17 +586,52 @@ def main():
             dead += 1
             continue                     # 仅剔除“明确已死”的
         scored.append((s, lat))          # alive / unknown 均保留
-    scored.sort(key=lambda t: t[1])      # 按延时升序，快的靠前
-    kept = [s for s, _ in scored[:MAX_SITES]]
-    print(f"[探测] 可用 {len(scored)}（明确死亡剔除 {dead}）→ 按延时取最快 {len(kept)} 个")
-    for s, lat in scored[:MAX_SITES]:
-        print(f"   {lat:6.2f}s  {s.get('name')}  {s['api']}")
+    scored.sort(key=lambda t: t[1])
+    print(f"[粗筛] 接口可用 {len(scored)}（明确死亡剔除 {dead}）")
 
-    # 合并内置种子源（永远可用）
+    # 待测集合 = 延时最快的前 DEEP_CANDIDATES 个 + 内置种子（保证种子也有实测值）
+    prelim = [s for s, _ in scored[:DEEP_CANDIDATES]]
+    seen_api = {norm_api(s["api"]) for s in prelim}
+    for nm, api in SEED_SITES:
+        if norm_api(api) not in seen_api:
+            prelim.append({"name": nm, "type": 1, "api": api})
+            seen_api.add(norm_api(api))
+
+    # ---------- 第二轮：真实取流测速（详情 → m3u8 → 分片） ----------
+    play = {}
+    with ThreadPoolExecutor(max_workers=PROBE_WORKERS) as ex:
+        futs = {ex.submit(probe_play, s["api"]): s for s in prelim}
+        for fu in as_completed(futs):
+            s = futs[fu]
+            try:
+                play[norm_api(s["api"])] = fu.result()
+            except Exception:
+                play[norm_api(s["api"])] = (False, 0.0, "err")
+
+    rank = []
+    for s in prelim:
+        _ok, kbps, note = play.get(norm_api(s["api"]), (False, 0.0, "?"))
+        rank.append((s, kbps, note))
+    rank.sort(key=lambda t: t[1], reverse=True)     # 吞吐高的在前
+    print(f"[测速] 实测 {len(rank)} 个 → 按吞吐取前 {MAX_SITES}：")
+    for s, kbps, note in rank[:MAX_SITES]:
+        print(f"   {kbps:8.1f} KB/s  [{note:<14}] {s.get('name')}")
+
+    # 命名：剥掉上游自带的 [xxms|yy] 假标注 + 追加我们实测的吞吐
+    kept = []
+    for s, kbps, _ in rank[:MAX_SITES]:
+        nm = re.sub(r"^\s*(\[[^\]]*\]\s*)+", "", s.get("name") or "").strip() or "源"
+        s2 = dict(s)
+        s2["name"] = f"{nm}｜{kbps:.0f}KB/s" if kbps > 0 else f"{nm}｜待测"
+        kept.append(s2)
+
+    # 保底：内置种子源必须存在（附上它的实测值）
     existing = {norm_api(s["api"]) for s in kept}
     for nm, api in SEED_SITES:
         if norm_api(api) not in existing:
-            kept.append({"name": nm, "type": 1, "api": api})
+            _ok, kbps, _ = play.get(norm_api(api), (False, 0.0, ""))
+            kept.append({"name": f"{nm}｜{kbps:.0f}KB/s" if kbps > 0 else f"{nm}｜待测",
+                         "type": 1, "api": api})
             existing.add(norm_api(api))
 
     if not kept:  # 极端兜底
