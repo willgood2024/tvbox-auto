@@ -71,7 +71,7 @@ SEARCH_QUERY = "tvbox"
 SEARCH_PER_PAGE = 20
 MAX_AGE_DAYS = 30           # 新鲜度闸门：距今天 ≤ 30 天
 MAX_CONFIGS = 60            # 最多抓取的配置文件数
-MAX_SITES = 20              # 最终保留的源数量上限（按延时取最快的，宁精勿多）
+MAX_SITES = 35              # 最终保留的源数量上限（晚高峰多留备胎；35<DEEP_CANDIDATES=40 仍全部实测）
 PROBE_WORKERS = 16
 PROBE_TIMEOUT = 8
 DEEP_CANDIDATES = 40        # 接口延时粗筛后，进入"真实取流测速"的候选数
