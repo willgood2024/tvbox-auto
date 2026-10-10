@@ -1,134 +1,17 @@
 {
   "sites": [
     {
-      "key": "jkunzyapi_com",
-      "name": "鸡坤 | 采集｜1271KB/s",
+      "key": "hongniuzy2_com",
+      "name": "红牛资源｜684KB/s",
       "type": 1,
-      "api": "https://jkunzyapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "xxavs_com",
-      "name": "湿乐园 [49ms] ✅ [135ms] ✅ [140ms] ✅ [183ms] ✅ [165ms] ✅ [153ms] ✅ [130ms] ✅ [77ms] ✅ [281ms] ✅ [391ms] ✅ [107ms] ✅ [88ms] ✅ [83ms] ✅ [106ms] ✅ [149ms] ✅ [118ms] ✅ [262ms] ✅ [124ms] ✅ [68ms] ✅ [84ms] ✅ [84ms] ✅ [130ms] ✅ [83ms] ✅ [170ms] ✅ [103ms] ✅ [209ms] ✅ [134ms] ✅ [54ms] ✅ [183ms] ✅ [211ms] ✅ [184ms] ✅ [143ms] ✅ [130ms] ✅ [80ms] ✅ [137ms] ✅ [142ms] ✅ [492ms] ✅ [173ms] ✅ [146ms] ✅ [109ms] ✅ [143ms] ✅ [70ms] ✅ [101ms] ✅ [173ms] ✅ [109ms] ✅ [236ms] ✅ [100ms] ✅｜1158KB/s",
-      "type": 1,
-      "api": "https://xxavs.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "api_wsyzy_net",
-      "name": "👖奈飞｜1127KB/s",
-      "type": 1,
-      "api": "https://api.wsyzy.net/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "www_msnii_com",
-      "name": "美少女资源 [459ms] ✅ [313ms] ✅ [448ms] ✅ [690ms] ✅ [904ms] ✅ [824ms] ✅ [290ms] ✅ [277ms] ✅ [449ms] ✅ [454ms] ✅ [429ms] ✅ [574ms] ✅ [548ms] ✅ [295ms] ✅ [408ms] ✅ [331ms] ✅ [435ms] ✅ [538ms] ✅ [273ms] ✅ [189ms] ✅ [450ms] ✅ [856ms] ✅ [286ms] ✅ [578ms] ✅ [305ms] ✅ [479ms] ✅ [530ms] ✅ [515ms] ✅ [364ms] ✅ [821ms] ✅ [902ms] ✅ [616ms] ✅ [375ms] ✅ [459ms] ✅ [823ms] ✅ [592ms] ✅ [736ms] ✅ [535ms] ✅ [901ms] ✅ [326ms] ✅ [428ms] ✅ [299ms] ✅ [208ms] ✅ [750ms] ✅ [451ms] ✅ [415ms] ✅ [351ms] ✅｜923KB/s",
-      "type": 1,
-      "api": "https://www.msnii.com/api/json.php",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "ikunzyapi_com",
-      "name": "IK｜914KB/s",
-      "type": 1,
-      "api": "https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "ikunzyapi_com_",
-      "name": "爱坤资源 [timeout] ❌ [352ms] ✅ [435ms] ✅ [293ms] ✅ [563ms] ✅ [299ms] ✅ [354ms] ✅ [336ms] ✅ [836ms] ✅ [1003ms] ✅ [480ms] ✅ [362ms] ✅ [453ms] ✅ [848ms] ✅ [631ms] ✅ [303ms] ✅ [575ms] ✅ [584ms] ✅ [321ms] ✅ [279ms] ✅ [448ms] ✅ [318ms] ✅ [281ms] ✅ [344ms] ✅ [169ms] ✅ [266ms] ✅ [526ms] ✅ [255ms] ✅ [271ms] ✅ [1387ms] ✅ [326ms] ✅ [313ms] ✅ [208ms] ✅ [266ms] ✅ [197ms] ✅ [362ms] ✅ [221ms] ✅ [312ms] ✅ [265ms] ✅ [203ms] ✅ [228ms] ✅ [140ms] ✅ [140ms] ✅ [333ms] ✅ [198ms] ✅ [289ms] ✅ [150ms] ✅｜894KB/s",
-      "type": 1,
-      "api": "https://ikunzyapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "www_gdlsp_com",
-      "name": "香奶儿资源 [899ms] ✅ [299ms] ✅ [432ms] ✅ [301ms] ✅ [383ms] ✅ [271ms] ✅ [301ms] ✅ [358ms] ✅ [420ms] ✅ [517ms] ✅ [510ms] ✅ [581ms] ✅ [687ms] ✅ [309ms] ✅ [464ms] ✅ [293ms] ✅ [455ms] ✅ [516ms] ✅ [184ms] ✅ [200ms] ✅ [590ms] ✅ [457ms] ✅ [244ms] ✅ [532ms] ✅ [275ms] ✅ [811ms] ✅ [532ms] ✅ [571ms] ✅ [494ms] ✅ [662ms] ✅ [811ms] ✅ [648ms] ✅ [647ms] ✅ [426ms] ✅ [443ms] ✅ [591ms] ✅ [257ms] ✅ [646ms] ✅ [484ms] ✅ [387ms] ✅ [357ms] ✅ [228ms] ✅ [606ms] ✅ [611ms] ✅ [372ms] ✅ [897ms] ✅ [392ms] ✅｜873KB/s",
-      "type": 1,
-      "api": "https://www.gdlsp.com/api/json.php",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "jyzyapi_com",
-      "name": "金鹰 | 采集｜585KB/s",
-      "type": 1,
-      "api": "https://jyzyapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "api_xiaojizy_live",
-      "name": "小鸡资源 [257ms] ✅ [191ms] ✅ [192ms] ✅ [183ms] ✅ [918ms] ✅ [354ms] ✅ [146ms] ✅ [188ms] ✅ [397ms] ✅ [287ms] ✅ [211ms] ✅ [349ms] ✅ [262ms] ✅ [150ms] ✅ [233ms] ✅ [148ms] ✅ [507ms] ✅ [327ms] ✅ [149ms] ✅ [138ms] ✅ [333ms] ✅ [167ms] ✅ [139ms] ✅ [277ms] ✅ [153ms] ✅ [303ms] ✅ [456ms] ✅ [288ms] ✅ [282ms] ✅ [323ms] ✅ [279ms] ✅ [380ms] ✅ [382ms] ✅ [214ms] ✅ [349ms] ✅ [500ms] ✅ [488ms] ✅ [681ms] ✅ [489ms] ✅ [298ms] ✅ [363ms] ✅ [110ms] ✅ [163ms] ✅ [640ms] ✅ [214ms] ✅ [324ms] ✅ [149ms] ✅｜582KB/s",
-      "type": 1,
-      "api": "https://api.xiaojizy.live/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "hsckzy_vip",
-      "name": "黄色仓库 [164ms] ✅ [239ms] ✅ [250ms] ✅ [191ms] ✅ [178ms] ✅ [254ms] ✅ [184ms] ✅ [197ms] ✅ [210ms] ✅ [221ms] ✅ [1003ms] ✅ [122ms] ✅ [132ms] ✅ [161ms] ✅ [150ms] ✅ [214ms] ✅ [312ms] ✅ [166ms] ✅ [292ms] ✅ [185ms] ✅ [107ms] ✅ [301ms] ✅ [182ms] ✅ [608ms] ✅ [181ms] ✅ [210ms] ✅ [157ms] ✅ [138ms] ✅ [393ms] ✅ [225ms] ✅ [232ms] ✅ [151ms] ✅ [175ms] ✅ [108ms] ✅ [149ms] ✅ [223ms] ✅ [272ms] ✅ [163ms] ✅ [1392ms] ✅ [148ms] ✅ [183ms] ✅ [135ms] ✅ [212ms] ✅ [244ms] ✅ [191ms] ✅ [233ms] ✅ [215ms] ✅｜579KB/s",
-      "type": 1,
-      "api": "https://hsckzy.vip/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "ckzy_me",
-      "name": "CK资源 [118ms] ✅ [164ms] ✅ [154ms] ✅ [136ms] ✅ [262ms] ✅ [163ms] ✅ [86ms] ✅ [107ms] ✅ [2515ms] ✅ [170ms] ✅ [272ms] ✅ [196ms] ✅ [539ms] ✅ [118ms] ✅ [355ms] ✅ [131ms] ✅ [368ms] ✅ [347ms] ✅ [112ms] ✅ [113ms] ✅ [293ms] ✅ [1148ms] ✅ [93ms] ✅ [185ms] ✅ [162ms] ✅ [272ms] ✅ [235ms] ✅ [392ms] ✅ [470ms] ✅ [209ms] ✅ [215ms] ✅ [406ms] ✅ [261ms] ✅ [264ms] ✅ [244ms] ✅ [452ms] ✅ [2516ms] ✅ [483ms] ✅ [366ms] ✅ [161ms] ✅ [257ms] ✅ [342ms] ✅ [135ms] ✅ [343ms] ✅ [337ms] ✅ [4906ms] ✅ [174ms] ✅｜566KB/s",
-      "type": 1,
-      "api": "https://ckzy.me/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "www_hongniuzy2_com",
-      "name": "红牛资源 [357ms] ✅ [206ms] ✅ [266ms] ✅ [203ms] ✅ [348ms] ✅ [218ms] ✅ [225ms] ✅ [220ms] ✅ [1180ms] ✅ [303ms] ✅ [980ms] ✅ [459ms] ✅ [234ms] ✅ [244ms] ✅ [479ms] ✅ [166ms] ✅ [434ms] ✅ [302ms] ✅ [286ms] ✅ [209ms] ✅ [269ms] ✅ [317ms] ✅ [244ms] ✅ [490ms] ✅ [230ms] ✅ [343ms] ✅ [438ms] ✅ [314ms] ✅ [435ms] ✅ [350ms] ✅ [447ms] ✅ [257ms] ✅ [423ms] ✅ [295ms] ✅ [237ms] ✅ [589ms] ✅ [948ms] ✅ [426ms] ✅ [380ms] ✅ [279ms] ✅ [282ms] ✅ [213ms] ✅ [256ms] ✅ [405ms] ✅ [189ms] ✅ [331ms] ✅ [98ms] ✅｜565KB/s",
-      "type": 1,
-      "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "api_guangsuapi_com",
-      "name": "光速资源 [255ms] ✅ [293ms] ✅ [203ms] ✅ [271ms] ✅ [336ms] ✅ [192ms] ✅ [123ms] ✅ [246ms] ✅ [682ms] ✅ [411ms] ✅ [669ms] ✅ [300ms] ✅ [317ms] ✅ [495ms] ✅ [311ms] ✅ [278ms] ✅ [353ms] ✅ [282ms] ✅ [210ms] ✅ [116ms] ✅ [722ms] ✅ [201ms] ✅ [226ms] ✅ [363ms] ✅ [155ms] ✅ [335ms] ✅ [233ms] ✅ [194ms] ✅ [382ms] ✅ [845ms] ✅ [321ms] ✅ [432ms] ✅ [352ms] ✅ [206ms] ✅ [358ms] ✅ [410ms] ✅ [397ms] ✅ [236ms] ✅ [165ms] ✅ [183ms] ✅ [203ms] ✅ [111ms] ✅ [232ms] ✅ [386ms] ✅ [110ms] ✅ [288ms] ✅ [117ms] ✅｜564KB/s",
-      "type": 1,
-      "api": "https://api.guangsuapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "api_xjzyapi_com",
-      "name": "🍊小鸡｜559KB/s",
-      "type": 1,
-      "api": "https://api.xjzyapi.com/provide/vod",
+      "api": "https://hongniuzy2.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
       "key": "jinyingzy_com",
-      "name": "金鹰资源(切)｜556KB/s",
+      "name": "金鹰资源(切)｜592KB/s",
       "type": 1,
       "api": "http://jinyingzy.com/provide/vod",
       "searchable": 1,
@@ -136,17 +19,62 @@
       "filterable": 0
     },
     {
-      "key": "www_huyaapi_com",
-      "name": "虎牙资源 [332ms] ✅ [216ms] ✅ [163ms] ✅ [569ms] ✅ [238ms] ✅ [597ms] ✅ [77ms] ✅ [121ms] ✅ [681ms] ✅ [633ms] ✅ [677ms] ✅ [269ms] ✅ [688ms] ✅ [583ms] ✅ [701ms] ✅ [539ms] ✅ [382ms] ✅ [315ms] ✅ [177ms] ✅ [132ms] ✅ [317ms] ✅ [278ms] ✅ [530ms] ✅ [156ms] ✅ [173ms] ✅ [612ms] ✅ [285ms] ✅ [654ms] ✅ [687ms] ✅ [327ms] ✅ [388ms] ✅ [316ms] ✅ [652ms] ✅ [356ms] ✅ [264ms] ✅ [357ms] ✅ [297ms] ✅ [682ms] ✅ [205ms] ✅ [304ms] ✅ [304ms] ✅ [695ms] ✅ [106ms] ✅ [708ms] ✅ [415ms] ✅ [192ms] ✅ [578ms] ✅｜545KB/s",
+      "key": "jyzyapi_com",
+      "name": "金鹰 | 采集｜580KB/s",
       "type": 1,
-      "api": "https://www.huyaapi.com/api.php/provide/vod/",
+      "api": "https://jyzyapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "xxavs_com",
+      "name": "湿乐园 [49ms] ✅ [135ms] ✅ [140ms] ✅ [183ms] ✅ [165ms] ✅ [153ms] ✅ [130ms] ✅ [77ms] ✅ [281ms] ✅ [391ms] ✅ [107ms] ✅ [88ms] ✅ [83ms] ✅ [106ms] ✅ [149ms] ✅ [118ms] ✅ [262ms] ✅ [124ms] ✅ [68ms] ✅ [84ms] ✅ [84ms] ✅ [130ms] ✅ [83ms] ✅ [170ms] ✅ [103ms] ✅ [209ms] ✅ [134ms] ✅ [54ms] ✅ [183ms] ✅ [211ms] ✅ [184ms] ✅ [143ms] ✅ [130ms] ✅ [80ms] ✅ [137ms] ✅ [142ms] ✅ [492ms] ✅ [173ms] ✅ [146ms] ✅ [109ms] ✅ [143ms] ✅ [70ms] ✅ [101ms] ✅ [173ms] ✅ [109ms] ✅ [236ms] ✅ [100ms] ✅ [104ms] ✅｜569KB/s",
+      "type": 1,
+      "api": "https://xxavs.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "ckzy_me",
+      "name": "CK资源 [118ms] ✅ [164ms] ✅ [154ms] ✅ [136ms] ✅ [262ms] ✅ [163ms] ✅ [86ms] ✅ [107ms] ✅ [2515ms] ✅ [170ms] ✅ [272ms] ✅ [196ms] ✅ [539ms] ✅ [118ms] ✅ [355ms] ✅ [131ms] ✅ [368ms] ✅ [347ms] ✅ [112ms] ✅ [113ms] ✅ [293ms] ✅ [1148ms] ✅ [93ms] ✅ [185ms] ✅ [162ms] ✅ [272ms] ✅ [235ms] ✅ [392ms] ✅ [470ms] ✅ [209ms] ✅ [215ms] ✅ [406ms] ✅ [261ms] ✅ [264ms] ✅ [244ms] ✅ [452ms] ✅ [2516ms] ✅ [483ms] ✅ [366ms] ✅ [161ms] ✅ [257ms] ✅ [342ms] ✅ [135ms] ✅ [343ms] ✅ [337ms] ✅ [4906ms] ✅ [174ms] ✅ [157ms] ✅｜568KB/s",
+      "type": 1,
+      "api": "https://ckzy.me/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "jkunzyapi_com",
+      "name": "鸡坤 | 采集｜562KB/s",
+      "type": 1,
+      "api": "https://jkunzyapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "cdn_dzzyapi_com",
+      "name": "大众｜554KB/s",
+      "type": 1,
+      "api": "https://cdn.dzzyapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "api_guangsuapi_com",
+      "name": "光速资源 [255ms] ✅ [293ms] ✅ [203ms] ✅ [271ms] ✅ [336ms] ✅ [192ms] ✅ [123ms] ✅ [246ms] ✅ [682ms] ✅ [411ms] ✅ [669ms] ✅ [300ms] ✅ [317ms] ✅ [495ms] ✅ [311ms] ✅ [278ms] ✅ [353ms] ✅ [282ms] ✅ [210ms] ✅ [116ms] ✅ [722ms] ✅ [201ms] ✅ [226ms] ✅ [363ms] ✅ [155ms] ✅ [335ms] ✅ [233ms] ✅ [194ms] ✅ [382ms] ✅ [845ms] ✅ [321ms] ✅ [432ms] ✅ [352ms] ✅ [206ms] ✅ [358ms] ✅ [410ms] ✅ [397ms] ✅ [236ms] ✅ [165ms] ✅ [183ms] ✅ [203ms] ✅ [111ms] ✅ [232ms] ✅ [386ms] ✅ [110ms] ✅ [288ms] ✅ [117ms] ✅ [622ms] ✅｜545KB/s",
+      "type": 1,
+      "api": "https://api.guangsuapi.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
       "key": "hhzyapi_com",
-      "name": "🦊火狐采集｜442KB/s",
+      "name": "🦊火狐采集｜539KB/s",
       "type": 1,
       "api": "https://hhzyapi.com/api.php/provide/vod/",
       "searchable": 1,
@@ -154,8 +82,26 @@
       "filterable": 0
     },
     {
+      "key": "api_xjzyapi_com",
+      "name": "🍊小鸡｜526KB/s",
+      "type": 1,
+      "api": "https://api.xjzyapi.com/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "jyzyapi_com_",
+      "name": "金鹰资源 [578ms] ✅ [325ms] ✅ [673ms] ✅ [247ms] ✅ [679ms] ✅ [314ms] ✅ [130ms] ✅ [691ms] ✅ [659ms] ✅ [726ms] ✅ [1060ms] ✅ [607ms] ✅ [305ms] ✅ [625ms] ✅ [648ms] ✅ [542ms] ✅ [612ms] ✅ [422ms] ✅ [237ms] ✅ [536ms] ✅ [496ms] ✅ [230ms] ✅ [632ms] ✅ [320ms] ✅ [185ms] ✅ [786ms] ✅ [639ms] ✅ [360ms] ✅ [531ms] ✅ [846ms] ✅ [731ms] ✅ [239ms] ✅ [703ms] ✅ [262ms] ✅ [621ms] ✅ [742ms] ✅ [1202ms] ✅ [415ms] ✅ [632ms] ✅ [261ms] ✅ [187ms] ✅ [260ms] ✅ [513ms] ✅ [476ms] ✅ [271ms] ✅ [702ms] ✅ [223ms] ✅ [573ms] ✅｜513KB/s",
+      "type": 1,
+      "api": "https://jyzyapi.com/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
       "key": "www_hongniuzy3_com",
-      "name": "🐂 红牛｜431KB/s",
+      "name": "🐂 红牛｜494KB/s",
       "type": 1,
       "api": "https://www.hongniuzy3.com/api.php/provide/vod",
       "searchable": 1,
@@ -163,17 +109,89 @@
       "filterable": 0
     },
     {
-      "key": "xingba111_com",
-      "name": "杏吧资源 [248ms] ✅ [154ms] ✅ [187ms] ✅ [160ms] ✅ [338ms] ✅ [148ms] ✅ [144ms] ✅ [140ms] ✅ [910ms] ✅ [390ms] ✅ [690ms] ✅ [260ms] ✅ [265ms] ✅ [171ms] ✅ [316ms] ✅ [143ms] ✅ [507ms] ✅ [398ms] ✅ [525ms] ✅ [267ms] ✅ [568ms] ✅ [329ms] ✅ [312ms] ✅ [430ms] ✅ [361ms] ✅ [640ms] ✅ [423ms] ✅ [424ms] ✅ [529ms] ✅ [734ms] ✅ [567ms] ✅ [303ms] ✅ [601ms] ✅ [412ms] ✅ [399ms] ✅ [666ms] ✅ [945ms] ✅ [540ms] ✅ [426ms] ✅ [470ms] ✅ [529ms] ✅ [394ms] ✅ [284ms] ✅ [657ms] ✅ [365ms] ✅ [625ms] ✅ [526ms] ✅｜274KB/s",
+      "key": "360zyzz_com",
+      "name": "360资源｜485KB/s",
       "type": 1,
-      "api": "https://xingba111.com/api.php/provide/vod/",
+      "api": "https://360zyzz.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "api_xinlangapi_com",
+      "name": "新浪｜480KB/s",
+      "type": 1,
+      "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod/josn",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "ikunzyapi_com",
+      "name": "爱坤资源 [timeout] ❌ [352ms] ✅ [435ms] ✅ [293ms] ✅ [563ms] ✅ [299ms] ✅ [354ms] ✅ [336ms] ✅ [836ms] ✅ [1003ms] ✅ [480ms] ✅ [362ms] ✅ [453ms] ✅ [848ms] ✅ [631ms] ✅ [303ms] ✅ [575ms] ✅ [584ms] ✅ [321ms] ✅ [279ms] ✅ [448ms] ✅ [318ms] ✅ [281ms] ✅ [344ms] ✅ [169ms] ✅ [266ms] ✅ [526ms] ✅ [255ms] ✅ [271ms] ✅ [1387ms] ✅ [326ms] ✅ [313ms] ✅ [208ms] ✅ [266ms] ✅ [197ms] ✅ [362ms] ✅ [221ms] ✅ [312ms] ✅ [265ms] ✅ [203ms] ✅ [228ms] ✅ [140ms] ✅ [140ms] ✅ [333ms] ✅ [198ms] ✅ [289ms] ✅ [150ms] ✅ [162ms] ✅｜479KB/s",
+      "type": 1,
+      "api": "https://ikunzyapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "api_xinlangapi_com_",
+      "name": "新浪资源 [254ms] ✅ [225ms] ✅ [624ms] ✅ [243ms] ✅ [241ms] ✅ [642ms] ✅ [142ms] ✅ [382ms] ✅ [593ms] ✅ [223ms] ✅ [512ms] ✅ [245ms] ✅ [280ms] ✅ [555ms] ✅ [269ms] ✅ [557ms] ✅ [287ms] ✅ [622ms] ✅ [462ms] ✅ [241ms] ✅ [578ms] ✅ [179ms] ✅ [549ms] ✅ [487ms] ✅ [283ms] ✅ [548ms] ✅ [664ms] ✅ [241ms] ✅ [556ms] ✅ [285ms] ✅ [214ms] ✅ [198ms] ✅ [579ms] ✅ [283ms] ✅ [601ms] ✅ [298ms] ✅ [264ms] ✅ [240ms] ✅ [157ms] ✅ [275ms] ✅ [218ms] ✅ [241ms] ✅ [549ms] ✅ [619ms] ✅ [273ms] ✅ [232ms] ✅ [240ms] ✅ [523ms] ✅｜469KB/s",
+      "type": 1,
+      "api": "http://api.xinlangapi.com/xinlangapi.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "ikunzyapi_com_",
+      "name": "IK｜465KB/s",
+      "type": 1,
+      "api": "https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "www_hongniuzy2_com",
+      "name": "红牛资源 [357ms] ✅ [206ms] ✅ [266ms] ✅ [203ms] ✅ [348ms] ✅ [218ms] ✅ [225ms] ✅ [220ms] ✅ [1180ms] ✅ [303ms] ✅ [980ms] ✅ [459ms] ✅ [234ms] ✅ [244ms] ✅ [479ms] ✅ [166ms] ✅ [434ms] ✅ [302ms] ✅ [286ms] ✅ [209ms] ✅ [269ms] ✅ [317ms] ✅ [244ms] ✅ [490ms] ✅ [230ms] ✅ [343ms] ✅ [438ms] ✅ [314ms] ✅ [435ms] ✅ [350ms] ✅ [447ms] ✅ [257ms] ✅ [423ms] ✅ [295ms] ✅ [237ms] ✅ [589ms] ✅ [948ms] ✅ [426ms] ✅ [380ms] ✅ [279ms] ✅ [282ms] ✅ [213ms] ✅ [256ms] ✅ [405ms] ✅ [189ms] ✅ [331ms] ✅ [98ms] ✅ [125ms] ✅｜464KB/s",
+      "type": 1,
+      "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "www_huyaapi_com",
+      "name": "虎牙资源 [332ms] ✅ [216ms] ✅ [163ms] ✅ [569ms] ✅ [238ms] ✅ [597ms] ✅ [77ms] ✅ [121ms] ✅ [681ms] ✅ [633ms] ✅ [677ms] ✅ [269ms] ✅ [688ms] ✅ [583ms] ✅ [701ms] ✅ [539ms] ✅ [382ms] ✅ [315ms] ✅ [177ms] ✅ [132ms] ✅ [317ms] ✅ [278ms] ✅ [530ms] ✅ [156ms] ✅ [173ms] ✅ [612ms] ✅ [285ms] ✅ [654ms] ✅ [687ms] ✅ [327ms] ✅ [388ms] ✅ [316ms] ✅ [652ms] ✅ [356ms] ✅ [264ms] ✅ [357ms] ✅ [297ms] ✅ [682ms] ✅ [205ms] ✅ [304ms] ✅ [304ms] ✅ [695ms] ✅ [106ms] ✅ [708ms] ✅ [415ms] ✅ [192ms] ✅ [578ms] ✅ [592ms] ✅｜418KB/s",
+      "type": 1,
+      "api": "https://www.huyaapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "api_wsyzy_net",
+      "name": "无水印｜401KB/s",
+      "type": 1,
+      "api": "https://api.wsyzy.net/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "hsckzy_vip",
+      "name": "黄色仓库 [164ms] ✅ [239ms] ✅ [250ms] ✅ [191ms] ✅ [178ms] ✅ [254ms] ✅ [184ms] ✅ [197ms] ✅ [210ms] ✅ [221ms] ✅ [1003ms] ✅ [122ms] ✅ [132ms] ✅ [161ms] ✅ [150ms] ✅ [214ms] ✅ [312ms] ✅ [166ms] ✅ [292ms] ✅ [185ms] ✅ [107ms] ✅ [301ms] ✅ [182ms] ✅ [608ms] ✅ [181ms] ✅ [210ms] ✅ [157ms] ✅ [138ms] ✅ [393ms] ✅ [225ms] ✅ [232ms] ✅ [151ms] ✅ [175ms] ✅ [108ms] ✅ [149ms] ✅ [223ms] ✅ [272ms] ✅ [163ms] ✅ [1392ms] ✅ [148ms] ✅ [183ms] ✅ [135ms] ✅ [212ms] ✅ [244ms] ✅ [191ms] ✅ [233ms] ✅ [215ms] ✅ [171ms] ✅｜392KB/s",
+      "type": 1,
+      "api": "https://hsckzy.vip/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
       "key": "m3u8_apiyhzy_com",
-      "name": "樱花资源 [360ms] ✅ [305ms] ✅ [337ms] ✅ [315ms] ✅ [357ms] ✅ [382ms] ✅ [338ms] ✅ [355ms] ✅ [607ms] ✅ [298ms] ✅ [589ms] ✅ [333ms] ✅ [381ms] ✅ [518ms] ✅ [392ms] ✅ [332ms] ✅ [543ms] ✅ [383ms] ✅ [268ms] ✅ [266ms] ✅ [266ms] ✅ [388ms] ✅ [287ms] ✅ [355ms] ✅ [292ms] ✅ [397ms] ✅ [390ms] ✅ [373ms] ✅ [480ms] ✅ [547ms] ✅ [472ms] ✅ [370ms] ✅ [451ms] ✅ [303ms] ✅ [324ms] ✅ [459ms] ✅ [388ms] ✅ [507ms] ✅ [333ms] ✅ [400ms] ✅ [486ms] ✅ [281ms] ✅ [334ms] ✅ [458ms] ✅ [322ms] ✅ [468ms] ✅ [285ms] ✅｜247KB/s",
+      "name": "樱花资源 [360ms] ✅ [305ms] ✅ [337ms] ✅ [315ms] ✅ [357ms] ✅ [382ms] ✅ [338ms] ✅ [355ms] ✅ [607ms] ✅ [298ms] ✅ [589ms] ✅ [333ms] ✅ [381ms] ✅ [518ms] ✅ [392ms] ✅ [332ms] ✅ [543ms] ✅ [383ms] ✅ [268ms] ✅ [266ms] ✅ [266ms] ✅ [388ms] ✅ [287ms] ✅ [355ms] ✅ [292ms] ✅ [397ms] ✅ [390ms] ✅ [373ms] ✅ [480ms] ✅ [547ms] ✅ [472ms] ✅ [370ms] ✅ [451ms] ✅ [303ms] ✅ [324ms] ✅ [459ms] ✅ [388ms] ✅ [507ms] ✅ [333ms] ✅ [400ms] ✅ [486ms] ✅ [281ms] ✅ [334ms] ✅ [458ms] ✅ [322ms] ✅ [468ms] ✅ [285ms] ✅ [435ms] ✅｜246KB/s",
       "type": 1,
       "api": "https://m3u8.apiyhzy.com/api.php/provide/vod/",
       "searchable": 1,
@@ -181,17 +199,8 @@
       "filterable": 0
     },
     {
-      "key": "www_kxgav_com",
-      "name": "白嫖资源 [569ms] ✅ [266ms] ✅ [372ms] ✅ [327ms] ✅ [375ms] ✅ [280ms] ✅ [251ms] ✅ [359ms] ✅ [398ms] ✅ [463ms] ✅ [522ms] ✅ [545ms] ✅ [566ms] ✅ [264ms] ✅ [824ms] ✅ [231ms] ✅ [383ms] ✅ [425ms] ✅ [322ms] ✅ [162ms] ✅ [521ms] ✅ [932ms] ✅ [285ms] ✅ [625ms] ✅ [287ms] ✅ [597ms] ✅ [485ms] ✅ [794ms] ✅ [275ms] ✅ [261ms] ✅ [587ms] ✅ [983ms] ✅ [335ms] ✅ [547ms] ✅ [444ms] ✅ [494ms] ✅ [779ms] ✅ [540ms] ✅ [471ms] ✅ [327ms] ✅ [731ms] ✅ [610ms] ✅ [175ms] ✅ [470ms] ✅ [402ms] ✅ [392ms] ✅ [382ms] ✅｜41KB/s",
-      "type": 1,
-      "api": "https://www.kxgav.com/api/json.php",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
       "key": "jszyapi_com",
-      "name": "极速资源 [247ms] ✅ [177ms] ✅ [216ms] ✅ [433ms] ✅ [260ms] ✅ [237ms] ✅ [72ms] ✅ [202ms] ✅ [276ms] ✅ [275ms] ✅ [577ms] ✅ [336ms] ✅ [370ms] ✅ [233ms] ✅ [249ms] ✅ [201ms] ✅ [315ms] ✅ [432ms] ✅ [516ms] ✅ [140ms] ✅ [149ms] ✅ [187ms] ✅ [270ms] ✅ [244ms] ✅ [233ms] ✅ [371ms] ✅ [184ms] ✅ [124ms] ✅ [263ms] ✅ [482ms] ✅ [251ms] ✅ [119ms] ✅ [249ms] ✅ [173ms] ✅ [394ms] ✅ [224ms] ✅ [702ms] ✅ [294ms] ✅ [184ms] ✅ [141ms] ✅ [202ms] ✅ [192ms] ✅ [145ms] ✅ [226ms] ✅ [162ms] ✅ [188ms] ✅ [158ms] ✅｜待测",
+      "name": "极速资源 [247ms] ✅ [177ms] ✅ [216ms] ✅ [433ms] ✅ [260ms] ✅ [237ms] ✅ [72ms] ✅ [202ms] ✅ [276ms] ✅ [275ms] ✅ [577ms] ✅ [336ms] ✅ [370ms] ✅ [233ms] ✅ [249ms] ✅ [201ms] ✅ [315ms] ✅ [432ms] ✅ [516ms] ✅ [140ms] ✅ [149ms] ✅ [187ms] ✅ [270ms] ✅ [244ms] ✅ [233ms] ✅ [371ms] ✅ [184ms] ✅ [124ms] ✅ [263ms] ✅ [482ms] ✅ [251ms] ✅ [119ms] ✅ [249ms] ✅ [173ms] ✅ [394ms] ✅ [224ms] ✅ [702ms] ✅ [294ms] ✅ [184ms] ✅ [141ms] ✅ [202ms] ✅ [192ms] ✅ [145ms] ✅ [226ms] ✅ [162ms] ✅ [188ms] ✅ [158ms] ✅ [406ms] ✅｜待测",
       "type": 1,
       "api": "https://jszyapi.com/api.php/provide/vod/",
       "searchable": 1,
@@ -199,35 +208,53 @@
       "filterable": 0
     },
     {
-      "key": "caiji_dyttzyapi_com",
-      "name": "🧞无广┃[采集]｜待测",
+      "key": "jyzyapi_com__",
+      "name": "金鹰｜待测",
       "type": 1,
-      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod/from/dyttm3u8/at/json/",
+      "api": "https://jyzyapi.com/provide/vod/from/jinyingyun/at/json",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
-      "key": "api_niuniuzy_me",
-      "name": "牛牛资源 [2340ms] ✅ [215ms] ✅ [299ms] ✅ [256ms] ✅ [409ms] ✅ [207ms] ✅ [174ms] ✅ [206ms] ✅ [842ms] ✅ [491ms] ✅ [812ms] ✅ [286ms] ✅ [281ms] ✅ [206ms] ✅ [236ms] ✅ [186ms] ✅ [300ms] ✅ [360ms] ✅ [183ms] ✅ [187ms] ✅ [465ms] ✅ [220ms] ✅ [168ms] ✅ [456ms] ✅ [254ms] ✅ [502ms] ✅ [347ms] ✅ [285ms] ✅ [275ms] ✅ [352ms] ✅ [337ms] ✅ [316ms] ✅ [272ms] ✅ [218ms] ✅ [280ms] ✅ [494ms] ✅ [721ms] ✅ [490ms] ✅ [288ms] ✅ [267ms] ✅ [254ms] ✅ [241ms] ✅ [363ms] ✅ [294ms] ✅ [207ms] ✅ [3564ms] ✅ [192ms] ✅｜待测",
+      "key": "ffzy1_tv",
+      "name": "🥗┃非凡┃资源｜待测",
       "type": 1,
-      "api": "https://api.niuniuzy.me/api.php/provide/vod/",
+      "api": "http://ffzy1.tv/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "tyyszy_com",
+      "name": "天涯资源｜待测",
+      "type": 1,
+      "api": "https://tyyszy.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "ffzy5_tv",
+      "name": "非凡资源｜待测",
+      "type": 1,
+      "api": "https://ffzy5.tv/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
       "key": "suoniapi_com",
-      "name": "索尼┃资源｜待测",
+      "name": "索尼┃采集｜待测",
       "type": 1,
-      "api": "https://suoniapi.com/api.php/provide/vod/from/snm3u8/",
+      "api": "https://suoniapi.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
       "key": "cj_yayazy_net",
-      "name": "鸭鸭资源 [290ms] ✅ [281ms] ✅ [285ms] ✅ [315ms] ✅ [359ms] ✅ [287ms] ✅ [441ms] ✅ [263ms] ✅ [703ms] ✅ [308ms] ✅ [369ms] ✅ [369ms] ✅ [210ms] ✅ [261ms] ✅ [332ms] ✅ [261ms] ✅ [393ms] ✅ [302ms] ✅ [233ms] ✅ [199ms] ✅ [227ms] ✅ [414ms] ✅ [158ms] ✅ [269ms] ✅ [206ms] ✅ [448ms] ✅ [383ms] ✅ [359ms] ✅ [268ms] ✅ [263ms] ✅ [381ms] ✅ [386ms] ✅ [275ms] ✅ [367ms] ✅ [296ms] ✅ [342ms] ✅ [408ms] ✅ [258ms] ✅ [322ms] ✅ [316ms] ✅ [325ms] ✅ [316ms] ✅ [250ms] ✅ [403ms] ✅ [308ms] ✅ [327ms] ✅ [209ms] ✅｜待测",
+      "name": "鸭鸭资源 [290ms] ✅ [281ms] ✅ [285ms] ✅ [315ms] ✅ [359ms] ✅ [287ms] ✅ [441ms] ✅ [263ms] ✅ [703ms] ✅ [308ms] ✅ [369ms] ✅ [369ms] ✅ [210ms] ✅ [261ms] ✅ [332ms] ✅ [261ms] ✅ [393ms] ✅ [302ms] ✅ [233ms] ✅ [199ms] ✅ [227ms] ✅ [414ms] ✅ [158ms] ✅ [269ms] ✅ [206ms] ✅ [448ms] ✅ [383ms] ✅ [359ms] ✅ [268ms] ✅ [263ms] ✅ [381ms] ✅ [386ms] ✅ [275ms] ✅ [367ms] ✅ [296ms] ✅ [342ms] ✅ [408ms] ✅ [258ms] ✅ [322ms] ✅ [316ms] ✅ [325ms] ✅ [316ms] ✅ [250ms] ✅ [403ms] ✅ [308ms] ✅ [327ms] ✅ [209ms] ✅ [202ms] ✅｜待测",
       "type": 1,
       "api": "https://cj.yayazy.net/api.php/provide/vod/",
       "searchable": 1,
@@ -235,26 +262,8 @@
       "filterable": 0
     },
     {
-      "key": "caiji_dyttzyapi_com_",
-      "name": "电影天堂 [578ms] ✅ [228ms] ✅ [489ms] ✅ [265ms] ✅ [890ms] ✅ [232ms] ✅ [402ms] ✅ [466ms] ✅ [481ms] ✅ [1542ms] ✅ [482ms] ✅ [429ms] ✅ [541ms] ✅ [269ms] ✅ [1111ms] ✅ [816ms] ✅ [484ms] ✅ [431ms] ✅ [225ms] ✅ [2349ms] ✅ [660ms] ✅ [915ms] ✅ [333ms] ✅ [732ms] ✅ [384ms] ✅ [781ms] ✅ [1192ms] ✅ [1000ms] ✅ [317ms] ✅ [595ms] ✅ [563ms] ✅ [830ms] ✅ [845ms] ✅ [524ms] ✅ [608ms] ✅ [436ms] ✅ [274ms] ✅ [542ms] ✅ [505ms] ✅ [292ms] ✅ [518ms] ✅ [234ms] ✅ [707ms] ✅ [436ms] ✅ [304ms] ✅ [366ms] ✅ [229ms] ✅｜待测",
-      "type": 1,
-      "api": "https://caiji.dyttzyapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "www_pgxdy_com",
-      "name": "黄AV资源 [662ms] ✅ [223ms] ✅ [296ms] ✅ [258ms] ✅ [464ms] ✅ [588ms] ✅ [249ms] ✅ [326ms] ✅ [1322ms] ✅ [531ms] ✅ [759ms] ✅ [650ms] ✅ [408ms] ✅ [265ms] ✅ [371ms] ✅ [319ms] ✅ [435ms] ✅ [669ms] ✅ [594ms] ✅ [165ms] ✅ [300ms] ✅ [764ms] ✅ [260ms] ✅ [543ms] ✅ [162ms] ✅ [456ms] ✅ [370ms] ✅ [402ms] ✅ [317ms] ✅ [588ms] ✅ [357ms] ✅ [630ms] ✅ [337ms] ✅ [670ms] ✅ [464ms] ✅ [435ms] ✅ [485ms] ✅ [490ms] ✅ [396ms] ✅ [518ms] ✅ [314ms] ✅ [643ms] ✅ [187ms] ✅ [454ms] ✅ [407ms] ✅ [328ms] ✅ [209ms] ✅｜待测",
-      "type": 1,
-      "api": "https://www.pgxdy.com/api/json.php",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
       "key": "api_wujinapi_net",
-      "name": "无尽资源 [353ms] ✅ [timeout] ❌ [280ms] ✅ [249ms] ✅ [405ms] ✅ [248ms] ✅ [139ms] ✅ [285ms] ✅ [1008ms] ✅ [536ms] ✅ [769ms] ✅ [275ms] ✅ [320ms] ✅ [187ms] ✅ [329ms] ✅ [160ms] ✅ [498ms] ✅ [403ms] ✅ [199ms] ✅ [200ms] ✅ [294ms] ✅ [310ms] ✅ [182ms] ✅ [352ms] ✅ [timeout] ❌ [428ms] ✅ [292ms] ✅ [251ms] ✅ [396ms] ✅ [466ms] ✅ [384ms] ✅ [374ms] ✅ [323ms] ✅ [311ms] ✅ [328ms] ✅ [463ms] ✅ [911ms] ✅ [399ms] ✅ [310ms] ✅ [191ms] ✅ [360ms] ✅ [162ms] ✅ [180ms] ✅ [398ms] ✅ [241ms] ✅ [295ms] ✅ [196ms] ✅｜待测",
+      "name": "无尽资源 [353ms] ✅ [timeout] ❌ [280ms] ✅ [249ms] ✅ [405ms] ✅ [248ms] ✅ [139ms] ✅ [285ms] ✅ [1008ms] ✅ [536ms] ✅ [769ms] ✅ [275ms] ✅ [320ms] ✅ [187ms] ✅ [329ms] ✅ [160ms] ✅ [498ms] ✅ [403ms] ✅ [199ms] ✅ [200ms] ✅ [294ms] ✅ [310ms] ✅ [182ms] ✅ [352ms] ✅ [timeout] ❌ [428ms] ✅ [292ms] ✅ [251ms] ✅ [396ms] ✅ [466ms] ✅ [384ms] ✅ [374ms] ✅ [323ms] ✅ [311ms] ✅ [328ms] ✅ [463ms] ✅ [911ms] ✅ [399ms] ✅ [310ms] ✅ [191ms] ✅ [360ms] ✅ [162ms] ✅ [180ms] ✅ [398ms] ✅ [241ms] ✅ [295ms] ✅ [196ms] ✅ [174ms] ✅｜待测",
       "type": 1,
       "api": "https://api.wujinapi.net/api.php/provide/vod/",
       "searchable": 1,
@@ -263,7 +272,7 @@
     },
     {
       "key": "sdzyapi_com",
-      "name": "闪电资源 [283ms] ✅ [257ms] ✅ [268ms] ✅ [183ms] ✅ [272ms] ✅ [229ms] ✅ [208ms] ✅ [235ms] ✅ [940ms] ✅ [448ms] ✅ [376ms] ✅ [293ms] ✅ [343ms] ✅ [154ms] ✅ [257ms] ✅ [223ms] ✅ [416ms] ✅ [336ms] ✅ [190ms] ✅ [162ms] ✅ [360ms] ✅ [307ms] ✅ [163ms] ✅ [361ms] ✅ [176ms] ✅ [420ms] ✅ [355ms] ✅ [289ms] ✅ [286ms] ✅ [307ms] ✅ [303ms] ✅ [377ms] ✅ [309ms] ✅ [334ms] ✅ [314ms] ✅ [321ms] ✅ [1249ms] ✅ [382ms] ✅ [337ms] ✅ [295ms] ✅ [290ms] ✅ [189ms] ✅ [234ms] ✅ [325ms] ✅ [251ms] ✅ [273ms] ✅ [199ms] ✅｜待测",
+      "name": "闪电资源 [283ms] ✅ [257ms] ✅ [268ms] ✅ [183ms] ✅ [272ms] ✅ [229ms] ✅ [208ms] ✅ [235ms] ✅ [940ms] ✅ [448ms] ✅ [376ms] ✅ [293ms] ✅ [343ms] ✅ [154ms] ✅ [257ms] ✅ [223ms] ✅ [416ms] ✅ [336ms] ✅ [190ms] ✅ [162ms] ✅ [360ms] ✅ [307ms] ✅ [163ms] ✅ [361ms] ✅ [176ms] ✅ [420ms] ✅ [355ms] ✅ [289ms] ✅ [286ms] ✅ [307ms] ✅ [303ms] ✅ [377ms] ✅ [309ms] ✅ [334ms] ✅ [314ms] ✅ [321ms] ✅ [1249ms] ✅ [382ms] ✅ [337ms] ✅ [295ms] ✅ [290ms] ✅ [189ms] ✅ [234ms] ✅ [325ms] ✅ [251ms] ✅ [273ms] ✅ [199ms] ✅ [195ms] ✅｜待测",
       "type": 1,
       "api": "https://sdzyapi.com/api.php/provide/vod/",
       "searchable": 1,
@@ -271,17 +280,8 @@
       "filterable": 0
     },
     {
-      "key": "tyyszyapi_com",
-      "name": "天涯资源｜待测",
-      "type": 1,
-      "api": "https://tyyszyapi.com/api.php/provide/vod/at/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
       "key": "154_219_117_232_9981",
-      "name": "建安资源 [427ms] ✅ [340ms] ✅ [310ms] ✅ [341ms] ✅ [400ms] ✅ [338ms] ✅ [323ms] ✅ [323ms] ✅ [393ms] ✅ [405ms] ✅ [452ms] ✅ [387ms] ✅ [444ms] ✅ [328ms] ✅ [458ms] ✅ [325ms] ✅ [373ms] ✅ [454ms] ✅ [315ms] ✅ [323ms] ✅ [436ms] ✅ [455ms] ✅ [315ms] ✅ [441ms] ✅ [328ms] ✅ [389ms] ✅ [408ms] ✅ [444ms] ✅ [412ms] ✅ [351ms] ✅ [423ms] ✅ [438ms] ✅ [397ms] ✅ [444ms] ✅ [446ms] ✅ [382ms] ✅ [328ms] ✅ [393ms] ✅ [461ms] ✅ [337ms] ✅ [443ms] ✅ [323ms] ✅ [327ms] ✅ [470ms] ✅ [345ms] ✅ [403ms] ✅ [334ms] ✅｜待测",
+      "name": "建安资源 [427ms] ✅ [340ms] ✅ [310ms] ✅ [341ms] ✅ [400ms] ✅ [338ms] ✅ [323ms] ✅ [323ms] ✅ [393ms] ✅ [405ms] ✅ [452ms] ✅ [387ms] ✅ [444ms] ✅ [328ms] ✅ [458ms] ✅ [325ms] ✅ [373ms] ✅ [454ms] ✅ [315ms] ✅ [323ms] ✅ [436ms] ✅ [455ms] ✅ [315ms] ✅ [441ms] ✅ [328ms] ✅ [389ms] ✅ [408ms] ✅ [444ms] ✅ [412ms] ✅ [351ms] ✅ [423ms] ✅ [438ms] ✅ [397ms] ✅ [444ms] ✅ [446ms] ✅ [382ms] ✅ [328ms] ✅ [393ms] ✅ [461ms] ✅ [337ms] ✅ [443ms] ✅ [323ms] ✅ [327ms] ✅ [470ms] ✅ [345ms] ✅ [403ms] ✅ [334ms] ✅ [326ms] ✅｜待测",
       "type": 1,
       "api": "http://154.219.117.232:9981/jacloudapi.php/provide/vod/",
       "searchable": 1,
@@ -289,28 +289,28 @@
       "filterable": 0
     },
     {
-      "key": "api_ukuapi88_com",
-      "name": "U酷资源 [237ms] ✅ [194ms] ✅ [245ms] ✅ [112ms] ✅ [288ms] ✅ [216ms] ✅ [177ms] ✅ [178ms] ✅ [694ms] ✅ [702ms] ✅ [738ms] ✅ [372ms] ✅ [426ms] ✅ [188ms] ✅ [483ms] ✅ [266ms] ✅ [405ms] ✅ [311ms] ✅ [158ms] ✅ [170ms] ✅ [170ms] ✅ [245ms] ✅ [133ms] ✅ [472ms] ✅ [167ms] ✅ [364ms] ✅ [507ms] ✅ [497ms] ✅ [445ms] ✅ [278ms] ✅ [549ms] ✅ [432ms] ✅ [341ms] ✅ [247ms] ✅ [247ms] ✅ [398ms] ✅ [649ms] ✅ [694ms] ✅ [466ms] ✅ [321ms] ✅ [392ms] ✅ [177ms] ✅ [175ms] ✅ [333ms] ✅ [203ms] ✅ [428ms] ✅ [117ms] ✅｜待测",
+      "key": "bfzyapi_com",
+      "name": "暴風┃采集｜待测",
       "type": 1,
-      "api": "https://api.ukuapi88.com/api.php/provide/vod/",
+      "api": "https://bfzyapi.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
-      "key": "www_xrbsp_com",
-      "name": "淫水机资源 [432ms] ✅ [269ms] ✅ [406ms] ✅ [653ms] ✅ [548ms] ✅ [271ms] ✅ [285ms] ✅ [280ms] ✅ [415ms] ✅ [470ms] ✅ [493ms] ✅ [420ms] ✅ [408ms] ✅ [686ms] ✅ [576ms] ✅ [276ms] ✅ [352ms] ✅ [553ms] ✅ [691ms] ✅ [205ms] ✅ [435ms] ✅ [418ms] ✅ [241ms] ✅ [472ms] ✅ [216ms] ✅ [495ms] ✅ [530ms] ✅ [512ms] ✅ [384ms] ✅ [245ms] ✅ [504ms] ✅ [391ms] ✅ [401ms] ✅ [504ms] ✅ [542ms] ✅ [488ms] ✅ [353ms] ✅ [658ms] ✅ [853ms] ✅ [334ms] ✅ [418ms] ✅ [225ms] ✅ [615ms] ✅ [547ms] ✅ [412ms] ✅ [457ms] ✅ [396ms] ✅｜待测",
+      "key": "caiji_dyttzyapi_com",
+      "name": "电影天堂 [578ms] ✅ [228ms] ✅ [489ms] ✅ [265ms] ✅ [890ms] ✅ [232ms] ✅ [402ms] ✅ [466ms] ✅ [481ms] ✅ [1542ms] ✅ [482ms] ✅ [429ms] ✅ [541ms] ✅ [269ms] ✅ [1111ms] ✅ [816ms] ✅ [484ms] ✅ [431ms] ✅ [225ms] ✅ [2349ms] ✅ [660ms] ✅ [915ms] ✅ [333ms] ✅ [732ms] ✅ [384ms] ✅ [781ms] ✅ [1192ms] ✅ [1000ms] ✅ [317ms] ✅ [595ms] ✅ [563ms] ✅ [830ms] ✅ [845ms] ✅ [524ms] ✅ [608ms] ✅ [436ms] ✅ [274ms] ✅ [542ms] ✅ [505ms] ✅ [292ms] ✅ [518ms] ✅ [234ms] ✅ [707ms] ✅ [436ms] ✅ [304ms] ✅ [366ms] ✅ [229ms] ✅ [358ms] ✅｜待测",
       "type": 1,
-      "api": "https://www.xrbsp.com/api/json.php",
+      "api": "https://caiji.dyttzyapi.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
-      "key": "suoniapi_com_",
-      "name": "索尼┃采集｜待测",
+      "key": "hong_hgyx_vip",
+      "name": "🐂全网｜待测",
       "type": 1,
-      "api": "https://suoniapi.com/api.php/provide/vod",
+      "api": "https://hong.hgyx.vip/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
@@ -320,15 +320,6 @@
       "name": "百度采集｜待测",
       "type": 1,
       "api": "https://api.apibdzy.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "bfzyapi_com",
-      "name": "暴风采集｜待测",
-      "type": 1,
-      "api": "https://bfzyapi.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
