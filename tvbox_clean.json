@@ -1,8 +1,62 @@
 {
   "sites": [
     {
+      "key": "jszyapi_com",
+      "name": "极速资源｜537KB/s",
+      "type": 1,
+      "api": "https://jszyapi.com/api.php/provide/vod/at/json",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "ikunzyapi_com",
+      "name": "IK｜461KB/s",
+      "type": 1,
+      "api": "https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "jszyapi_com_",
+      "name": "影视 | 极速[直连]｜436KB/s",
+      "type": 1,
+      "api": "https://jszyapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "jisuzy_tv",
+      "name": "⚡极速资源2｜430KB/s",
+      "type": 1,
+      "api": "https://jisuzy.tv/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "jkunzyapi_com",
+      "name": "💕jkun(直连)｜421KB/s",
+      "type": 1,
+      "api": "https://jkunzyapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "api_xjzyapi_com",
+      "name": "🍊小鸡｜385KB/s",
+      "type": 1,
+      "api": "https://api.xjzyapi.com/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
       "key": "jyzyapi_com",
-      "name": "金鹰资源｜574KB/s",
+      "name": "金鹰资源｜380KB/s",
       "type": 1,
       "api": "https://jyzyapi.com/api.php/provide/vod",
       "searchable": 1,
@@ -10,71 +64,17 @@
       "filterable": 0
     },
     {
-      "key": "jyzyapi_com_",
-      "name": "jiangyu｜555KB/s",
-      "type": 1,
-      "api": "https://jyzyapi.com/provide/vod",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "ikunzyapi_com",
-      "name": "采集视频3｜536KB/s",
-      "type": 1,
-      "api": "https://ikunzyapi.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "huyazy_net",
-      "name": "虎牙资源站｜516KB/s",
-      "type": 1,
-      "api": "https://huyazy.net/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "hongniuzy3_com",
-      "name": "hongniu3｜495KB/s",
-      "type": 1,
-      "api": "https://hongniuzy3.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "www_hongniuzy2_com",
-      "name": "🎀红牛┃采集｜483KB/s",
-      "type": 1,
-      "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "www_huyaapi_com",
-      "name": "🐯虎牙采集｜482KB/s",
-      "type": 1,
-      "api": "https://www.huyaapi.com/api.php/provide/vod/from/hym3u8",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "hongniuzy2_com",
-      "name": "红牛资源｜478KB/s",
-      "type": 1,
-      "api": "https://hongniuzy2.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
       "key": "jinyingzy_com",
-      "name": "jinying｜477KB/s",
+      "name": "金鹰资源(切)｜367KB/s",
+      "type": 1,
+      "api": "http://jinyingzy.com/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "jinyingzy_com_",
+      "name": "🍀金鹰｜364KB/s",
       "type": 1,
       "api": "https://jinyingzy.com/api.php/provide/vod",
       "searchable": 1,
@@ -82,35 +82,17 @@
       "filterable": 0
     },
     {
-      "key": "jszyapi_com",
-      "name": "极速｜477KB/s",
+      "key": "www_huyaapi_com",
+      "name": "🐯虎牙采集｜364KB/s",
       "type": 1,
-      "api": "https://jszyapi.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "api_guangsuapi_com",
-      "name": "光速资源｜475KB/s",
-      "type": 1,
-      "api": "https://api.guangsuapi.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "www_huyaapi_com_",
-      "name": "虎牙资源｜473KB/s",
-      "type": 1,
-      "api": "https://www.huyaapi.com/api.php/provide/vod",
+      "api": "https://www.huyaapi.com/api.php/provide/vod/from/hym3u8",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
       "key": "api_xinlangapi_com",
-      "name": "新浪｜468KB/s",
+      "name": "新浪点播｜342KB/s",
       "type": 1,
       "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
       "searchable": 1,
@@ -119,16 +101,34 @@
     },
     {
       "key": "www_hongniuzy3_com",
-      "name": "红牛资源3｜464KB/s",
+      "name": "😺红牛｜340KB/s",
       "type": 1,
-      "api": "https://www.hongniuzy3.com/api.php/provide/vod/",
+      "api": "https://www.hongniuzy3.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "api_guangsuapi_com",
+      "name": "光速资源｜333KB/s",
+      "type": 1,
+      "api": "https://api.guangsuapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "www_hongniuzy2_com",
+      "name": "🎀红牛┃采集｜325KB/s",
+      "type": 1,
+      "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
       "key": "hhzyapi_com",
-      "name": "🦊火狐采集｜463KB/s",
+      "name": "🦊火狐采集｜323KB/s",
       "type": 1,
       "api": "https://hhzyapi.com/api.php/provide/vod/",
       "searchable": 1,
@@ -136,44 +136,17 @@
       "filterable": 0
     },
     {
-      "key": "ikunzyapi_com_",
-      "name": "IK｜451KB/s",
+      "key": "www_huyaapi_com_",
+      "name": "虎牙资源｜318KB/s",
       "type": 1,
-      "api": "https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "jkunzyapi_com",
-      "name": "💕jkun(直连)｜434KB/s",
-      "type": 1,
-      "api": "https://jkunzyapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "jszyapi_com_",
-      "name": "极速资源｜432KB/s",
-      "type": 1,
-      "api": "https://jszyapi.com/api.php/provide/vod/at/json",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "api_apibdzy_com",
-      "name": "百度┃采集｜368KB/s",
-      "type": 1,
-      "api": "https://api.apibdzy.com/api.php/provide/vod",
+      "api": "https://www.huyaapi.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
       "key": "m3u8_apiyhzy_com",
-      "name": "樱花资源｜320KB/s",
+      "name": "樱花资源｜281KB/s",
       "type": 1,
       "api": "https://m3u8.apiyhzy.com/api.php/provide/vod",
       "searchable": 1,
@@ -181,10 +154,46 @@
       "filterable": 0
     },
     {
+      "key": "360zy_com",
+      "name": "360资源｜267KB/s",
+      "type": 1,
+      "api": "https://360zy.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "cj_lziapi_com",
+      "name": "量子采集｜174KB/s",
+      "type": 1,
+      "api": "https://cj.lziapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
       "key": "bfzyapi_com",
-      "name": "暴風┃采集｜155KB/s",
+      "name": "暴风采集｜170KB/s",
       "type": 1,
       "api": "https://bfzyapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "www_mdzyapi_com",
+      "name": "魔都资源｜150KB/s",
+      "type": 1,
+      "api": "https://www.mdzyapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "360zyzz_com",
+      "name": "360｜51KB/s",
+      "type": 1,
+      "api": "https://360zyzz.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
@@ -199,17 +208,17 @@
       "filterable": 0
     },
     {
-      "key": "suoniapi_com",
-      "name": "索尼┃采集｜待测",
+      "key": "api_zuidapi_com",
+      "name": "最大资源｜待测",
       "type": 1,
-      "api": "https://suoniapi.com/api.php/provide/vod",
+      "api": "https://api.zuidapi.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
       "key": "caiji_dyttzyapi_com",
-      "name": "️天堂┃采集｜待测",
+      "name": "🍀｜天堂｜采集｜待测",
       "type": 1,
       "api": "http://caiji.dyttzyapi.com/api.php/provide/vod/from/dyttm3u8/at/m3u8/",
       "searchable": 1,
@@ -217,19 +226,28 @@
       "filterable": 0
     },
     {
-      "key": "ffzy3_tv",
-      "name": "6-非凡｜待测",
+      "key": "tyyszy_com",
+      "name": "天涯资源｜待测",
       "type": 1,
-      "api": "https://ffzy3.tv/api.php/provide/vod",
+      "api": "https://tyyszy.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
-      "key": "vnzyz_com",
-      "name": "💕越南(直连)｜待测",
+      "key": "tyyszyapi_com",
+      "name": "天涯资源｜待测",
       "type": 1,
-      "api": "https://vnzyz.com/api.php/provide/vod/",
+      "api": "https://tyyszyapi.com/api.php/provide/vod/at/",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "ffzy5_tv",
+      "name": "非凡5｜待测",
+      "type": 1,
+      "api": "https://ffzy5.tv/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
@@ -253,33 +271,6 @@
       "filterable": 0
     },
     {
-      "key": "ffzy4_tv",
-      "name": "7-非凡｜待测",
-      "type": 1,
-      "api": "https://ffzy4.tv/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "api_niuniuzy_me",
-      "name": "牛牛点播｜待测",
-      "type": 1,
-      "api": "https://api.niuniuzy.me/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "api_wujinapi_net",
-      "name": "无尽资源3｜待测",
-      "type": 1,
-      "api": "https://api.wujinapi.net/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
       "key": "cj_yayazy_net",
       "name": "丫丫点播｜待测",
       "type": 1,
@@ -289,10 +280,10 @@
       "filterable": 0
     },
     {
-      "key": "ww96_taiee_xyz",
-      "name": "taiee96｜待测",
+      "key": "suoniapi_com",
+      "name": "索尼┃采集｜待测",
       "type": 1,
-      "api": "https://ww96.taiee.xyz/api.php/provide/vod",
+      "api": "https://suoniapi.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
@@ -307,19 +298,28 @@
       "filterable": 0
     },
     {
-      "key": "caiji_dyttzyapi_com_",
-      "name": "电影天堂｜待测",
+      "key": "api_wujinapi_net",
+      "name": "无尽资源3｜待测",
       "type": 1,
-      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+      "api": "https://api.wujinapi.net/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
     },
     {
-      "key": "cj_lziapi_com",
-      "name": "量子采集｜待测",
+      "key": "api_niuniuzy_me",
+      "name": "牛牛点播｜待测",
       "type": 1,
-      "api": "https://cj.lziapi.com/api.php/provide/vod",
+      "api": "https://api.niuniuzy.me/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "api_apibdzy_com",
+      "name": "百度采集｜待测",
+      "type": 1,
+      "api": "https://api.apibdzy.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 0
